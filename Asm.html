@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Assignment work 2 for intro 2 IT</title>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+    /*Style of the words and background*/
+        /*Change the display of the words  */
+        body{
+            background-color: black;
+            color:white;
+            font-size:120%;
+            margin-bottom: 100px
+            }
+        h1{
+        
+
+            }
+        /*Styles of the texts*/
+        .writings{
+            padding:16px;
+            margin-top:00px;
+            }
+        
+    /*Menu Creation*/
+        /*Styles of the border of the Menu */
+        .navigation_bar{
+            overflow:hidden;
+            background-color:gray;
+            position:fixed;
+            top: 0;
+            width:100%;
+            }
+
+        /*Style of the buttons of the Menu*/
+        .navigation_bar a{
+            float: left;
+            display: block;
+            color:white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration:none;
+            font-size:17px;
+            }
+
+        /*Style of the buttons of the Menu when the mouse is hovering on it*/
+        .navigation_bar a:hover{
+            background:green;
+            color: black;
+            }
+    
+    /*Tab Creation*/
+        /*Style of the tab*/
+        .tab{
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+            }
+
+        /* Style the buttons that are used to open the tab content */
+        .tab button{
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            }
+
+        /*Style of the tab buttons when the mouse is hovering on the button*/
+        .tab button:hover{
+            background-color: #ddd;
+            }
+
+        /* Create an active/current tablink class */
+        .tab button.active{
+            background-color: #ccc;
+            }
+
+        /* Style of the tab content */
+        .tabcontent{
+            display: none;
+            padding: 6px 12px;
+            border: 1px solid #ccc;
+            border-top: none;
+            }
+
+    
+        
+    </style>
+    <link>
+   
+    <script>
+    /*Tab creation*/
+        function open_tab(evt, person){
+            // Declare all variables
+            var i, tabcontent, tablinks;
+
+            // Get all elements with class="tabcontent" and hide them
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++){
+                tabcontent[i].style.display = "none";
+            }
+
+            // Get all elements with class="tablinks" and remove the class "active"
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++){
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+
+            // Show the current tab, and add an "active" class to the button that opened the tab
+            document.getElementById(person).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
+    <base>
+
+
+
+</head>
+<body>
+    <!-- Menu bar creation -->
+     <div class="navigation_bar">
+        <a href="#home">Home</a>
+        <a href="#team_name">Team Name</a>
+        <a href="#personal_information">Personal Information</a>
+        <a href="#group_processes">Group Processes</a>
+        <a href="#career_plans">Career Plans</a>
+        
+    </div>
+    
+    <!-- Content of the #Home -->
+    <div id="home" class="writings">
+        <br>
+        <h1>Home</h1>
+        <p>This is the words we gonna use with "p" </p>
+        <p>This is the words we gonna use with "div" </p>
+        <p>This is the words we gonna use with "p" </p>
+        <p>This is the words we gonna use with "p" </p>
+        
+        These are the headers current styles
+        <h1>Heading 1</h1>
+        <h2>Heading 2</h2>
+        <h3>Heading 3</h3>
+        <h4>Heading 4</h4>
+        <h5>Heading 5</h5>
+        <h6>Heading 6</h6>
+    </div>
+
+    <!-- Content of the Team Name category -->
+    <div id="team_name" class="writings">
+        <br>
+        <h1>Team Name</h1>
+        <p>some text to say something weird and cool</p>
+        <p>some text to say something weird and cool</p>
+        <p>some text to say something weird and cool</p>
+        <p>some text to say something weird and cool</p>
+        <p>some text to say something weird and cool</p>
+        <p>some text to say something weird and cool</p>
+    
+    </div>
+
+    <!-- Content of the Personal Information Category -->
+    <div id="personal_information" class="writings">
+        <br>
+        <h1>Personal Information</h1>
+        <!-- Tab links -->
+        <div class="tab">
+            <button class="tablinks" onclick="open_tab(event, 'personal_info_quynh')">Dinh Ngoc Quynh</button>
+            <button class="tablinks" onclick="open_tab(event, 'personal_info_hung')">Ngo Khai Hung</button>
+            <button class="tablinks" onclick="open_tab(event, 'personal_info_thang')">Nguyen Duc Thang</button>
+        </div>
+
+        <!-- Tab content -->
+        <div id="personal_info_quynh" class="tabcontent">
+            <h3>Dinh Ngoc Quynh - S3757193</h3>
+            <p>My name is Dinh Ngoc Quynh and my sID is s3757193. I am a senior at RMIT studying International Business and Digital Marketing as major and minor, respectively. I am an extrovert who is friendly, humorous, open-minded and energetic. Besides, I also like making new friends and broadening my social circle to observe and learn from several people from different backgrounds as I find it interesting to comprehend others’ personality and feelings. I acknowledge myself as a good listener and advisor, thus, having various connections will help me enrich my experiences and perspective in dealing with circumstances. I had joined RMIT Vietnam Business Club and RMIT Vietnam Student Council and it has supported my college as well as my personal life a lot. At first, I never thought I would engage in any IT course since I believed IT is only writing code. However, after talking with my friends, I realised that SQL is one of the useful tools for business data management and decided to join a basic course in Linkedin which was quite enjoyable for me. Another example is about the personalised digital ads on Google and Facebook and digital marketing coursesI joined in RMIT such as Digital Business Development, which is about SEM, running ads and so on, that triggered my curiosity about AI and IT in general. Despite having no knowledge in the IT field, I hope to learn anything I can to support my career
+</p>
+        </div>
+
+        <div id="personal_info_hung" class="tabcontent">
+            <h3>Ngo Khai Hung - s3819675</h3>
+            <p>My name is Ngo Khai Hung and my student number is 3819675. I'm a first-year student at RMIT and my major is IT. Before enrolling in RMIT, I used to have a hard time making up my decision and often close my heart to others when my personality has majorly changed. My first encounter with IT is from games where you need to cooperate with strangers to achieve the goal of winning. That's when I put my mind to IT and from then I'm hoping that my future job is within the Information Technology industry. My enrolment was in 2019 when the first strike of Covid-19 entered VN, I had to take a break for 2 years to stabilise my family's finance, and also challenge myself with a side job as electrical refrigeration to experience how adulthood functions, collecting small pennies to fulfil an empty stomach, from then I have put myself in a position of working harder to avoid working menace labour job. IT is new to even me and even my family but, how they encouraged me to follow this path have made me realise how IT can change my life for the best and I'm hoping to learn more to complete my first task of mastering a programming language to further help me obtain my career in the future.
+</p>
+        </div>
+
+        <div id="personal_info_thang" class="tabcontent">
+            <h3>Nguyen Duc Thang - s3921992</h3>
+            <p>My name is Nguyen Duc Thang and my student ID is s3921992. I’m also a first-year RMIT student like everyone else in my group. Still, a bit that makes me different from other students is that I already have a background in another degree of economics. Still, I chose RMIT with the major of IT right at the end of my studies in FTU, and the reason for that is I wish to dig deeper into the field of A.I, so as to build my own machine that can calculate the flow of future economy. That is my dream. Still, my current goal is to learn and develop for myself a lifestyle that benefits my studies as much and as efficiently as possible, so that I can still keep myself always keeping track of all the new updates around me. However, as a human being, recreational activities are still needed, and I have chosen games as a way to relax myself, since playing a variety of games is also a way for me to see other developers’ ideas and enhance my own creativity. I’m hoping for a great start at RMIT as an IT freshman and even a brighter future waiting for me when I have earned my rightful place in my own company.
+</p>
+        </div>
+    </div>
+
+    <!-- Content of the Group Process category -->
+    <div id="group_processes" class="writings">
+        <br>
+        <h1>Group Processes</h1>
+        <p>some text to say something weird and cool</p>
+        <p>some text to say something weird and cool</p>
+        <p>some text to say something weird and cool</p>
+        <p>some text to say something weird and cool</p>
+        <p>some text to say something weird and cool</p>
+        <p>some text to say something weird and cool</p>
+  
+    
+    </div>
+
+    <!-- Content of the Career Plans Category -->
+    <div id="career_plans" class="writings">
+        <br>
+        <h1>Career Plans</h1>
+            <!-- Tab links -->
+        <div class="tab">
+            <button class="tablinks" onclick="open_tab(event, 'career_plan_quynh')">Dinh Ngoc Quynh</button>
+            <button class="tablinks" onclick="open_tab(event, 'career_plan_hung')">Ngo Khai Hung</button>
+            <button class="tablinks" onclick="open_tab(event, 'career_plan_thang')">Nguyen Duc Thang</button>
+            <button class="tablinks" onclick="open_tab(event, 'career_plan_overview')">Overview</button>
+        </div>
+
+        <!-- Tab content -->
+        <div id="career_plan_quynh" class="tabcontent">
+            <h3>Dinh Ngoc Quynh - E-Commerce Manager</h3>
+            <p>As I mostly finish Marketing courses in my minor, I am planning to find a position in the Digital Marketing field. To increase my possibility of success in job application, besides the fundamental marketing knowledge, I think it would be better if I know more about how the digital system works. To support the E-Commerce position of an E-Business and improve consumers' shopping experience, the way I reach out and communicate to them is crucial along with the Customer Relationship Management (CRM) has to be well-managed. 
+            </p>
+        </div>
+
+        <div id="career_plan_hung" class="tabcontent">
+            <h3>Ngo Khai Hung - Cyber security manager</h3>
+            <p>After graduating from RMIT in my major, I am looking forward to starting to apply to small companies that professionally train cybersecurity employees to obtain more knowledge. Working a total of 6 years to obtain a position of Cyber security manager will be one of many goals. After that, raise enough profit to establish a company at the age of 35.
+            </p>
+        </div>
+
+        <div id="career_plan_thang" class="tabcontent">
+            <h3>Nguyen Duc Thang - Data analyst</h3>
+            <p>For my future plans, I have already set up a list of goals for myself, including the first step of graduating RMIT with flying colours. My second goal of achieving my dream is to get myself a job which allows me to gain access to data analytical skills, which could be data analyst. Finally, once I have taken a grasp of the real work flow of real life, which might take me half a year, I can build my own project of making an A.I-based model for analysing or predicting the flow of the market at high accuracy. Still, even in the worst case scenario where I could end up failing the project, I can still have my knowledge during my studies in RMIT to make games or applications and sell them according to people’s wishes.
+            </p>
+        </div>
+        <div id="career_plan_overview" class="tabcontent">
+            <h3>Overview</h3>
+            <p>
+            Although we are all from different major, have different ideal jobs, we all want to learn IT as we acknowledge that in this modern world, especially in the 4.0 revolution, IT is a must to catch up with others and to support our career in the future as well. As can be seen through our ideal jobs, we want to study IT but more about the data. However, each of us will have different needs with different extent of knowledge regarding the IT field. Quynh wants to become a E-Commerce Manager in Digital Marketing which does not require much technical IT skills but data insights, how to optimise the available data to communicate with customers. Hung leans toward the privacy of data and systems while Thang wants to dive deeper into analysing data to and be able to serve in several perspectives such as business, finance, investment and so on. Apparently, Thang and Hung will have to be expertise in the IT field in order to achieve their dream jobs while Quynh can use it as a competitive advantage for her. 
+            </p>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+
