@@ -2,8 +2,7 @@
 <html lang="en">
 <head>
     <title>Assignment work 2 for intro 2 IT</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--<base href="https://github.com/Shariokin1809/Group-Project-IT/tree/main/" target="_blank">-->
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
     /*Style of the words and background*/
         /*Change the display of the words  */
@@ -16,11 +15,6 @@
         h1{
         
             }
-	.image {
-		display: block;
-		width: 600px;
-		height:auto;
-	}
         /*Styles of the paragraph*/
         p{
             text-align:justify
@@ -417,8 +411,7 @@ Even when those limitations are imposed on us, when we reach our own agreements,
                     </p>
                     <p>In this project, 2 main key components that we would classify in the most detailed ways are AI (Machine Learning) and 3D body models.
                     </p>
-                    <img src="Github Image/AI pic.png" alt="AI pic" class="image">
-                    <p style="text-align:center">AI pic</p>
+                    <img src="/images/html5.gif" alt="HTML5 Icon" style="width:128px;height:128px;">
                     <h4>2.5.1. 3D body model-related tools: </h4>
                     	<p>Software used to help generate a 3D model of the user body: 
                         </p>-  3DF Zephyr Free (Asia mirror) is compatible and free to suit our situation and beginner-friendly. 
@@ -582,24 +575,112 @@ Even when those limitations are imposed on us, when we reach our own agreements,
         <!--Content of the Project Prototype category-->
         	<br>
     		<h2 id="pp_register">1. Register/ Login</h2>
+		<p>The first step of using the app, the users should register and login account for the data to be saved for later use, If not then they will have to scan and input their data everytime they use the app.
+        </p>
+		<p>Still, when asked to login, all the users need is an account containing a name and a password, an email address will be required for first time sign up. This function mainly acts as a step to provide the application the key- “user name” to modify the suggestions based on each corresponding user, while also providing us with basic user information so that we can have a track of people’s uses based on each person.
+        </p>
+		<p>We will try to shorten the time needed for the first time-user as much as possible to fit the idea of the app being a tool of saving time for the users.. And the people from the second time onwards can get the clothes suggestions just from a single press of a button right after logging in.
+        </p>
+		
             
             <h2 id="pp_scan_body">2. Scan/ take input about the body of the users</h2>
+		<p>The person will have the option to either scan themselves through our app or give the app the numbers of their body like height, hips, chest,... This function will be performed in the first time use of the app and later on whenever the user wants to update their body scanning/ features. That is when our 3D body front-face camera will require to take the user's body measurement for better application experience.
+        </p>
+		<p>The more accurate the data, the more appealing our suggestion will be.
+This function mainly is for reducing the time needed for the users' first time signing up, since the body scanning will provide quick and accurate data, which only requires a quick scan in less than 20 seconds. Moreover, this data will influence the app’s later on suggestions’ accuracy. Still, even if scanning isn’t an option for the users, they can still type in their body numbers.
+</p>
+		<p>Still, since our time is limited, currently, we are linking our app with other applications that allow us to perform the scan to get the numbers we need. If this function is skipped by particular users, the body information will be auto generated based on the general body type of their living area.
+        </p>
+		<p>In the future, we plan to let it automatically update the users’ body numbers whenever the app receive a notification of the user’s full body scan on any media (If the permission is given)
+        </p>
             
             <h2 id="pp_scan_clothes">3. Scan/ take input about the clothes of the users</h2>
+		<p>Here, our barcode feature is used to scan the barcode that is tagged along with your clothes. Once we have known the numbers of the body, we will have to ask for their current clothes. We shall provide them a number of options as follow:
+        </p>
+		<p>- Scan the barcode of the clothes
+        </p>
+		<p>- Scan the clothes using our application
+        </p>
+		<p>- Send the app their clothes pictures
+        </p>
+		<p>- Type in the numbers
+        </p>
+		<p>The more accurate the input, the better our suggestions will be to the users.
+In a bizarre scenario where users don’t give inputs of their clothes, the app will decide the clothes chosen as any clothes of the users’ preferences.
+</p>
+		<p>We have created a virtual closet full of 3D scanned clothes that user can select if they don’t want to scan barcodes or their clothes have lost the barcode with the help of a camera, laser 3D scanner, 3DF Zephyr, to capture all the detail that users’ clothes have. This function will be available for the first time use of the app and whenever the users want to change their outfit wardrobe.
+        </p>
+		<p>In the future, we plan to have it automatically update whenever they receive a notification of a person buying a set of clothes to reduce the stress of having to type the clothes in every time they buy a new one.
+        </p>
             
             <h2 id="pp_perferences">4. Take input of the users’ preferences</h2>
+		<p>Then we will ask for the users’ likings and dislikes based on our database and categories with these major types:
+        </p>
+		<p>- Place of livings: Countries, cities, districts,...
+        </p>
+		<p>- Age: 15, 20, 30,...
+        </p>
+		<p>- Personal Preferences: Trendy, Unique, Casual,...
+        </p>
+		<p>These tags can be changed before and after the suggestions have been made.
+This function works as a failsafe when the above 2 features are skipped, while also providing the A.I data for accurate suggestions. AI will then sort out the user's clothes based on their reference category along with other users to then lead to the community function.
+</p>
+		<p>We will later decide the compulsory tags for the first time use after the testing phase of the project.
+        </p>
             
             <h2 id="pp_save">5. Save the data</h2>
-            
-            <h2 id="pp_suggest">6. Process the data and give users suggestions about the clothes
-</h2>
+		<p>User information will be stored in our Cloud Data Storage so that our application can run smoothly based on it. Once the data has been given by the user, our app will show the result of the input data and show a prompt at the bottom: “Do you wish to save or to change the current data?”. If they press yes, then the data is saved, if not then they can change whatever they wish it to.
+</p>
+		<p>After this, the user's data will be stored in our system Data Cloud Storage.
+The saved data can be changed by the users after their first suggestion by pressing the “Change data” button.
+</p>
+		<p>This will act as a confirmation of the users’ data and reduce the need of an auto save function when using the application (reduce the data traffic and increase the optimal time when using the app)
+        </p>
+		<p>In the future, we will customise the confirmation screen to either minimise it to a notification above the app or enlarge it into an entire screen based on the users feedback. Also, we will consider the need for a save confirmation or auto-save after each screen change.
+        </p>
+    		
+            <h2 id="pp_suggest">6. Process the data and give users suggestions about the clothes</h2>
+		<p>There will be a button called: “Today Outfit” that once pressed, it will prompt the user the best clothes they can wear.
+        </p>
+		<p>Once the first suggestion has been made, if the user is dissatisfied, they can choose to change their current tags, or change their saved data, then start another round of randomised sets of clothes by the our AI algorithm. With the help of the recommendation algorithm and randomiser algorithm our application can present the user with a new set of clothes based on their chosen reference.
+        </p>
+		<p>This is the main aim of the app: “To give people the suggestion of clothes”. This will help people from the need of choosing clothes everyday.
+        </p>
+		<p>Still, currently our group has decided that there will only be 2 sets of clothes, one they already owned and another option they are missing 1 piece or both.
+We also hold the dream of adding pictures or motions of the users when wearing the clothes.
+</p>
+		
             <h2 id="pp_community">7. Community </h2>
+            <p>However, If our suggestions could not appeal to the users, we have our resort of giving them a community to ask questions. This community will be advertised and managed by one of our members in the role of moderator to ensure that the environment is secured while also being enjoyable and toxic-free for everyone on the internet. Our community function will be programmed with the recommendation algorithm, user-user, people in one category can see each other's present set of clothes and also can comment on it. Item-item recommendations algorithm will recommend you to a similar style of clothes that you have chosen while using the application.
+            </p>
+            <p>This community will work as a place where people post their own questions and others will comment on their answers under their posts.
+            </p>
+            <p>In the future, once the community is large enough, we will consider using A.I to manage the hub instead of resorting to the need of human resources.
+            </p>
             
             <h2 id="pp_blog">8. Blog</h2>
+            <p>When there are people wishing to share their knowledge, or when they are proud of their sets of clothes, or when they just want to give feedback based on our applications in a long post, we have a feature called: “blog”.
+            </p>
+            <p>This blog will provide people with a variety of posts categorised in tags and will be read thoroughly by the admins before making an appearance.
+            </p>
+            <p>This will also be managed by human resources when the site is still in the developing phase in order to keep the environment toxic-free and enjoyable for everyone.
+            </p>
+            <p>In the future, once the blog posts are large enough, we will consider using A.I to manage the hub instead of resorting to the need of human resources.</p>
             
             <h2 id="pp_shop">9. Shopping</h2>
+            <p>This will provide the users options to buy and sell clothes they haven’t owned. 
+Once the suggestions have been made, or they just wish to see which clothes can go with the ones already in their closet, the shop function will be available to use. This function will direct users to the sites where they can buy the clothes on the application. Algorithms will be used in shop feature is the same as the community feature above.
+</p>
+            <p>However, currently we are asking for collaborations from other applications.
+In the future, once the purchase on the shop is made, the data will be sent directly to the system and update the users’ wardrobe, preferences.
+</p>
             
             <h2 id="pp_support">10. Customer Support</h2>
+            <p>Still, when there are problems relating to our application, there will always be customer support to help them solve it.
+            </p>
+            <p>We will have frequent Q&A channels, while also maintaining the ways for people to contact us like: our websites, emails, phone calls, text messages,...
+            </p>
+            <p>In the future, we will improve the Q&A channel through customers' questions and feedback. Moreover, when the system has stabilised, we will consider either adding A.I into the framework or adding auto-generated messages to the messages.</p>
             
             
       			
