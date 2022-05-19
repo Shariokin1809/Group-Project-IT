@@ -1,691 +1,703 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Assignment work 2 for intro 2 IT</title>
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-    /*Style of the words and background*/
-        /*Change the display of the words  */
-        body{
-            background-color: Azure;
-            color:black;
-            font-size:120%;
-            margin-bottom: 100px
-            }
-        h1{
-        
-            }
-        /*Styles of the paragraph*/
-        p{
-            text-align:justify
-            }
-        /*Styles of the texts*/
-        .writings{
-            padding:16px;
-            margin-top:00px;
-            }
-    /*Styles of the tables*/
-    	table, th, td {
-  			border:1px solid black;
-		}
-    /*Menu Creation*/
-        /*Styles of the border of the Menu */
-        .navigation_bar{
-            overflow:hidden;
-            background-color:lavenderblush;
-            position:fixed;
-            top: 0;
-            width:100%;
-            }
+   <title>Assignment work 2 for intro 2 IT</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <style>
+   /*Style of the words and background*/
+       /*Change the display of the words  */
+       body{
+           background-color: Azure;
+           color:black;
+           font-size:120%;
+           margin-bottom: 100px
+           }
+       h1{
+       
+           }
+       /*Styles of the paragraph*/
+       p{
+           text-align:justify
+           }
+       /*Styles of the texts*/
+       .writings{
+           padding:16px;
+           margin-top:00px;
+           }
+   /*Styles of the tables*/
+    table, th, td {
+    border:1px solid black;
+ }
+   /*Menu Creation*/
+       /*Styles of the border of the Menu */
+       .navigation_bar{
+           overflow:hidden;
+           background-color:lavenderblush;
+           position:fixed;
+           top: 0;
+           width:100%;
+           }
 
-        /*Style of the buttons of the Menu*/
-        .navigation_bar a{
-            float: left;
-            display: block;
-            color:mistyrosie;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration:none;
-            font-size:17px;
-            }
+       /*Style of the buttons of the Menu*/
+       .navigation_bar a{
+           float: left;
+           display: block;
+           color:mistyrosie;
+           text-align: center;
+           padding: 14px 16px;
+           text-decoration:none;
+           font-size:17px;
+           }
 
-        /*Style of the buttons of the Menu when the mouse is hovering on it*/
-        .navigation_bar a:hover{
-            background:mistyrose;
-            color: black;
-            }
-    
-    /*Tab Creation*/
-        /*Style of the tab*/
-        .tab{
-            overflow: hidden;
-            border: 1px solid #ccc;
-            background-color: lightblue;
-            }
-
-        /* Style the buttons that are used to open the tab content */
-        .tab button{
-            background-color: inherit;
-            float: left;
-            border: none;
-            outline: none;
-            cursor: pointer;
-            padding: 14px 16px;
-            transition: 0.3s;
-            }
-
-        /*Style of the tab buttons when the mouse is hovering on the button*/
-        .tab button:hover{
-            background-color: black;
-            }
-
-        /* Create an active/current tablink class */
-        .tab button.active{
-            background-color: #ccc;
-            }
-
-        /* Style of the tab content */
-        .tabcontent{
-            display: none;
-            padding: 6px 12px;
-            border: 1px solid #ccc;
-            border-top: none;
-            }
-	/*Create dropdown for big Categories*/
-    /* Dropdown Button */
-        .dropbtn {
-          background-color: #04AA6D;
-          color: white;
-          padding: 16px;
-          font-size: 16px;
-          border: none;
-        }
-
-    /* The container <div> - needed to position the dropdown content */
-        .dropdown {
-          position: relative;
-          display: inline-block;
-        }
-
-    /* Dropdown Content (Hidden by Default) */
-        .dropdown-content {
-          display: none;
-          position: absolute;
-          background-color: #f1f1f1;
-          min-width: 160px;
-          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-          z-index: 1;
-        }
-
-    /* Links inside the dropdown */
-        .dropdown-content a {
-          color: black;
-          padding: 12px 16px;
-          text-decoration: none;
-          display: block;
-        }
-
-    /* Change color of dropdown links on hover */
-        .dropdown-content a:hover {background-color: #ddd;}
-
-    /* Show the dropdown menu on hover */
-    	.dropdown:hover .dropdown-content {display: block;}
-
-    /* Change the background color of the dropdown button when the dropdown content is shown */
-    	.dropdown:hover .dropbtn {background-color: #3e8e41;}
-        
-    </style>
-    <link>
+       /*Style of the buttons of the Menu when the mouse is hovering on it*/
+       .navigation_bar a:hover{
+           background:mistyrose;
+           color: black;
+           }
    
-    <script>
-    /*Tab creation*/
-        function open_tab(evt, person){
-            // Declare all variables
-            var i, tabcontent, tablinks;
+   /*Tab Creation*/
+       /*Style of the tab*/
+       .tab{
+           overflow: hidden;
+           border: 1px solid #ccc;
+           background-color: lightblue;
+           }
 
-            // Get all elements with class="tabcontent" and hide them
-            tabcontent = document.getElementsByClassName("tabcontent");
-            for (i = 0; i < tabcontent.length; i++){
-                tabcontent[i].style.display = "none";
-            }
+       /* Style the buttons that are used to open the tab content */
+       .tab button{
+           background-color: inherit;
+           float: left;
+           border: none;
+           outline: none;
+           cursor: pointer;
+           padding: 14px 16px;
+           transition: 0.3s;
+           }
 
-            // Get all elements with class="tablinks" and remove the class "active"
-            tablinks = document.getElementsByClassName("tablinks");
-            for (i = 0; i < tablinks.length; i++){
-                tablinks[i].className = tablinks[i].className.replace(" active", "");
-            }
+       /*Style of the tab buttons when the mouse is hovering on the button*/
+       .tab button:hover{
+           background-color: black;
+           }
 
-            // Show the current tab, and add an "active" class to the button that opened the tab
-            document.getElementById(person).style.display = "block";
-            evt.currentTarget.className += " active";
-        }
-    </script>
-    <base>
+       /* Create an active/current tablink class */
+       .tab button.active{
+           background-color: #ccc;
+           }
+
+       /* Style of the tab content */
+       .tabcontent{
+           display: none;
+           padding: 6px 12px;
+           border: 1px solid #ccc;
+           border-top: none;
+           }
+/*Create dropdown for big Categories*/
+   /* Dropdown Button */
+       .dropbtn {
+         background-color: #04AA6D;
+         color: white;
+         padding: 16px;
+         font-size: 16px;
+         border: none;
+       }
+
+   /* The container <div> - needed to position the dropdown content */
+       .dropdown {
+         position: relative;
+         display: inline-block;
+       }
+
+   /* Dropdown Content (Hidden by Default) */
+       .dropdown-content {
+         display: none;
+         position: absolute;
+         background-color: #f1f1f1;
+         min-width: 160px;
+         box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+         z-index: 1;
+       }
+
+   /* Links inside the dropdown */
+       .dropdown-content a {
+         color: black;
+         padding: 12px 16px;
+         text-decoration: none;
+         display: block;
+       }
+
+   /* Change color of dropdown links on hover */
+       .dropdown-content a:hover {background-color: #ddd;}
+
+   /* Show the dropdown menu on hover */
+    .dropdown:hover .dropdown-content {display: block;}
+
+   /* Change the background color of the dropdown button when the dropdown content is shown */
+    .dropdown:hover .dropbtn {background-color: #3e8e41;}
+       
+   </style>
+   <link>
+  
+   <script>
+   /*Tab creation*/
+       function open_tab(evt, person){
+           // Declare all variables
+           var i, tabcontent, tablinks;
+
+           // Get all elements with class="tabcontent" and hide them
+           tabcontent = document.getElementsByClassName("tabcontent");
+           for (i = 0; i < tabcontent.length; i++){
+               tabcontent[i].style.display = "none";
+           }
+
+           // Get all elements with class="tablinks" and remove the class "active"
+           tablinks = document.getElementsByClassName("tablinks");
+           for (i = 0; i < tablinks.length; i++){
+               tablinks[i].className = tablinks[i].className.replace(" active", "");
+           }
+
+           // Show the current tab, and add an "active" class to the button that opened the tab
+           document.getElementById(person).style.display = "block";
+           evt.currentTarget.className += " active";
+       }
+   </script>
+   <base>
 
 
 
 </head>
 <body>
-    <!-- Menu bar creation -->
-     <div class="navigation_bar">
-        <a href="#home">Home</a>
-        <a href="#team_name">Team Name</a>
-        <a href="#personal_information">Personal Information</a>
-        <a href="#group_processes">Group Processes</a>
-        <a href="#career_plans">Career Plans</a>
-        <a href="#project_description">Project Description</a>
-        <a href="#project_prototype">Project Prototype</a>
-        
-    </div>
-    
-    <!-- Content of the #Home -->
-    <div id="home" class="writings">
-        <br>
-        <h1>Home</h1>
-        <p>This is the words we gonna use with "p" </p>
-        <p>This is the words we gonna use with "div" </p>
-        <p>This is the words we gonna use with "p" </p>
-        <p>This is the words we gonna use with "p" </p>
-        
-        These are the headers current styles
-        <h1>Heading 1</h1>
-        <h2>Heading 2</h2>
-        <h3>Heading 3</h3>
-        <h4>Heading 4</h4>
-        <h5>Heading 5</h5>
-        <h6>Heading 6</h6>
-    </div>
+   <!-- Menu bar creation -->
+    <div class="navigation_bar">
+       <a href="#home">Home</a>
+       <a href="#team_name">Team Name</a>
+       <a href="#personal_information">Personal Information</a>
+       <a href="#group_processes">Group Processes</a>
+       <a href="#career_plans">Career Plans</a>
+       <a href="#project_description">Project Description</a>
+       <a href="#project_prototype">Project Prototype</a>
+       
+   </div>
+   
+   <!-- Content of the #Home -->
+   <div id="home" class="writings">
+       <br>
+       <h1>Home</h1>
+       <p>This is the words we gonna use with "p" </p>
+       <p>This is the words we gonna use with "div" </p>
+       <p>This is the words we gonna use with "p" </p>
+       <p>This is the words we gonna use with "p" </p>
+       
+       These are the headers current styles
+       <h1>Heading 1</h1>
+       <h2>Heading 2</h2>
+       <h3>Heading 3</h3>
+       <h4>Heading 4</h4>
+       <h5>Heading 5</h5>
+       <h6>Heading 6</h6>
+   </div>
 
-    <!-- Content of the Team Name category -->
-    <div id="team_name" class="writings">
-        <br>
-        <h1>Team Name - TiB(Technology in Business)</h1>
-        <p>The team name is inspired from our major which is International Business (IB) and Information Technology (IT) and from the acknowledgement that Technology plays an essential role in most aspects, especially in business. </p>
-        
-    
-    </div>
+   <!-- Content of the Team Name category -->
+   <div id="team_name" class="writings">
+       <br>
+       <h1>Team Name - TiB(Technology in Business)</h1>
+       <p>The team name is inspired from our major which is International Business (IB) and Information Technology (IT) and from the acknowledgement that Technology plays an essential role in most aspects, especially in business. </p>
+       
+   
+   </div>
 
-    <!-- Content of the Personal Information Category -->
-    <div id="personal_information" class="writings">
-        <br>
-        <h1>Personal Information</h1>
-        <!-- Tab links -->
-        <div class="tab">
-            <button class="tablinks" onclick="open_tab(event, 'personal_info_quynh')">Dinh Ngoc Quynh</button>
-            <button class="tablinks" onclick="open_tab(event, 'personal_info_hung')">Ngo Khai Hung</button>
-            <button class="tablinks" onclick="open_tab(event, 'personal_info_thang')">Nguyen Duc Thang</button>
-        </div>
+   <!-- Content of the Personal Information Category -->
+   <div id="personal_information" class="writings">
+       <br>
+       <h1>Personal Information</h1>
+       <!-- Tab links -->
+       <div class="tab">
+           <button class="tablinks" onclick="open_tab(event, 'personal_info_quynh')">Dinh Ngoc Quynh</button>
+           <button class="tablinks" onclick="open_tab(event, 'personal_info_hung')">Ngo Khai Hung</button>
+           <button class="tablinks" onclick="open_tab(event, 'personal_info_thang')">Nguyen Duc Thang</button>
+       </div>
 
-        <!-- Tab content of the Personal Info tab -->
-        <!-- Quynh's Pesonal Info -->
-        <div id="personal_info_quynh" class="tabcontent">
-            <h3>Dinh Ngoc Quynh - S3757193</h3>
-            <p>My name is Dinh Ngoc Quynh and my sID is s3757193. I am a senior at RMIT studying International Business and Digital Marketing as major and minor, respectively. I am an extrovert who is friendly, humorous, open-minded and energetic. Besides, I also like making new friends and broadening my social circle to observe and learn from several people from different backgrounds as I find it interesting to comprehend others’ personality and feelings. I acknowledge myself as a good listener and advisor, thus, having various connections will help me enrich my experiences and perspective in dealing with circumstances. I had joined RMIT Vietnam Business Club and RMIT Vietnam Student Council and it has supported my college as well as my personal life a lot. At first, I never thought I would engage in any IT course since I believed IT is only writing code. However, after talking with my friends, I realised that SQL is one of the useful tools for business data management and decided to join a basic course in Linkedin which was quite enjoyable for me. Another example is about the personalised digital ads on Google and Facebook and digital marketing coursesI joined in RMIT such as Digital Business Development, which is about SEM, running ads and so on, that triggered my curiosity about AI and IT in general. Despite having no knowledge in the IT field, I hope to learn anything I can to support my career
+       <!-- Tab content of the Personal Info tab -->
+       <!-- Quynh's Pesonal Info -->
+       <div id="personal_info_quynh" class="tabcontent">
+           <h3>Dinh Ngoc Quynh - S3757193</h3>
+           <p><img src="Github Image/IMG_5396.JPG" alt="Quynh's pic" style="width:600px;height:auto;display:block;float:left;">
+
+My name is Dinh Ngoc Quynh and my sID is s3757193. I am a senior at RMIT studying International Business and Digital Marketing as major and minor, respectively. I am an extrovert who is friendly, humorous, open-minded and energetic. Besides, I also like making new friends and broadening my social circle to observe and learn from several people from different backgrounds as I find it interesting to comprehend others’ personality and feelings. I acknowledge myself as a good listener and advisor, thus, having various connections will help me enrich my experiences and perspective in dealing with circumstances. I had joined RMIT Vietnam Business Club and RMIT Vietnam Student Council and it has supported my college as well as my personal life a lot. At first, I never thought I would engage in any IT course since I believed IT is only writing code. However, after talking with my friends, I realised that SQL is one of the useful tools for business data management and decided to join a basic course in Linkedin which was quite enjoyable for me. Another example is about the personalised digital ads on Google and Facebook and digital marketing coursesI joined in RMIT such as Digital Business Development, which is about SEM, running ads and so on, that triggered my curiosity about AI and IT in general. Despite having no knowledge in the IT field, I hope to learn anything I can to support my career
 </p>
-        </div>
-        
-		<!-- Hung's Pesonal Info -->
-        <div id="personal_info_hung" class="tabcontent">
-            <h3>Ngo Khai Hung - s3819675</h3>
-            <p>My name is Ngo Khai Hung and my student number is 3819675. I'm a first-year student at RMIT and my major is IT. Before enrolling in RMIT, I used to have a hard time making up my decision and often close my heart to others when my personality has majorly changed. My first encounter with IT is from games where you need to cooperate with strangers to achieve the goal of winning. That's when I put my mind to IT and from then I'm hoping that my future job is within the Information Technology industry. My enrolment was in 2019 when the first strike of Covid-19 entered VN, I had to take a break for 2 years to stabilise my family's finance, and also challenge myself with a side job as electrical refrigeration to experience how adulthood functions, collecting small pennies to fulfil an empty stomach, from then I have put myself in a position of working harder to avoid working menace labour job. IT is new to even me and even my family but, how they encouraged me to follow this path have made me realise how IT can change my life for the best and I'm hoping to learn more to complete my first task of mastering a programming language to further help me obtain my career in the future.
+       </div>
+       
+ <!-- Hung's Pesonal Info -->
+       <div id="personal_info_hung" class="tabcontent">
+           <h3>Ngo Khai Hung - s3819675</h3>
+           <p>
+
+<img src="Github Image/Hung Image.jpg" alt="Hung's pic" style="width:600px;height:auto;display:block;float:left;">
+
+My name is Ngo Khai Hung and my student number is 3819675. I'm a first-year student at RMIT and my major is IT. Before enrolling in RMIT, I used to have a hard time making up my decision and often close my heart to others when my personality has majorly changed. My first encounter with IT is from games where you need to cooperate with strangers to achieve the goal of winning. That's when I put my mind to IT and from then I'm hoping that my future job is within the Information Technology industry. My enrolment was in 2019 when the first strike of Covid-19 entered VN, I had to take a break for 2 years to stabilise my family's finance, and also challenge myself with a side job as electrical refrigeration to experience how adulthood functions, collecting small pennies to fulfil an empty stomach, from then I have put myself in a position of working harder to avoid working menace labour job. IT is new to even me and even my family but, how they encouraged me to follow this path have made me realise how IT can change my life for the best and I'm hoping to learn more to complete my first task of mastering a programming language to further help me obtain my career in the future.
 </p>
-        </div>
-        
-		<!-- Thang's Pesonal Info -->
-        <div id="personal_info_thang" class="tabcontent">
-            <h3>Nguyen Duc Thang - s3921992</h3>
-            <p>My name is Nguyen Duc Thang and my student ID is s3921992. I’m also a first-year RMIT student like everyone else in my group. Still, a bit that makes me different from other students is that I already have a background in another degree of economics. Still, I chose RMIT with the major of IT right at the end of my studies in FTU, and the reason for that is I wish to dig deeper into the field of A.I, so as to build my own machine that can calculate the flow of future economy. That is my dream. Still, my current goal is to learn and develop for myself a lifestyle that benefits my studies as much and as efficiently as possible, so that I can still keep myself always keeping track of all the new updates around me. However, as a human being, recreational activities are still needed, and I have chosen games as a way to relax myself, since playing a variety of games is also a way for me to see other developers’ ideas and enhance my own creativity. I’m hoping for a great start at RMIT as an IT freshman and even a brighter future waiting for me when I have earned my rightful place in my own company.
+       </div>
+       
+ <!-- Thang's Pesonal Info -->
+       <div id="personal_info_thang" class="tabcontent">
+           <h3>Nguyen Duc Thang - s3921992</h3>
+
+
+           <p><img src="Github Image/self picture.jpg" alt="AI Pic" style="width:600px;height:auto;display:block;float:left">
+
+My name is Nguyen Duc Thang and my student ID is s3921992. I’m also a first-year RMIT student like everyone else in my group. Still, a bit that makes me different from other students is that I already have a background in another degree of economics. Still, I chose RMIT with the major of IT right at the end of my studies in FTU, and the reason for that is I wish to dig deeper into the field of A.I, so as to build my own machine that can calculate the flow of future economy. That is my dream. Still, my current goal is to learn and develop for myself a lifestyle that benefits my studies as much and as efficiently as possible, so that I can still keep myself always keeping track of all the new updates around me. However, as a human being, recreational activities are still needed, and I have chosen games as a way to relax myself, since playing a variety of games is also a way for me to see other developers’ ideas and enhance my own creativity. I’m hoping for a great start at RMIT as an IT freshman and even a brighter future waiting for me when I have earned my rightful place in my own company.
 </p>
-        </div>
-    </div>
+       </div>
+   </div>
 
-    <!-- Content of the Group Process category -->
-    <div id="group_processes" class="writings">
-        <br>
-        <h1>Group Processes</h1>
-        <p>Week 8:</p>
-        <p>We met each other and discussed the assignment’s structure as well as studied each other’s strengths and weaknesses. We have also achieved the first stage of getting to know our team members, including the way people talk, how they work and the way to contact each other efficiently.
-        </p>
-        <p>Then we are to do research about the upcoming topic so that in the next meeting, we can decide which idea we can use in the future.
-        </p>
-        <hr>
-        <p>Week 9:</p>
-        <p>We have gathered our original ideas as well as taken some great ideas on the internet as a way to compare to our current existing pool of ideas. Then we narrow down each idea until we get the final one
-        </p>
-        <p>Since our first meeting and our preparation at home were successful,we managed to pin down the main concept of our project to be in servings of clothes suggestions in only this meeting.
-        </p>
-        <hr>
-        <p>Week 10: </p>
-        <p>We have made a plan of the work during the meeting, then we decide each person’s work, allocate the team’s main focus so as to efficiently work through the process in the minimum time and effort.
-        </p>
-        <hr>
-        <p>Week 11:</p>
-        <p>Using the Drive and github and Canva and every online tool available, we managed to create a system of writing and checking for errors simutanously in each day: morning we write, and at night we can comment on the changes we have made. This process has been done everyday since the day we have made our plans.
-        </p>
-        <hr>
-        <p>Week 12:</p>
-        <p>After countless addings and fixings and comments everyday, we have managed to get ourselves a finalised product of the report, a website, a slideshow and finished our preparations for the demonstration day.
-        </p>
-        <hr>
-        <p>Overall:</p>
-        <p>In the first meeting to get to know each other and discuss the assignment’s structure, we quickly opened up and introduced ourselves as new friends. It was a smooth and comfortable meeting since we were all communicative, active in raising ideas and willing to listen to each other’s opinions and give feedback. Although everyone had different assignments and due dates, we tried to arrange the time as well as planned an agenda and prepared for the assignment before the meeting. During every meeting, we have one person write a meeting minute to record what was discussed and take note of important information as well as the deadline for the group. After dividing tasks, we also supported each other if someone was stuck at anything. For example, when Hung was a little out of ideas for risks, we had sat down and discussed the possibility of risks when doing this app. During the time we worked together, all members have shown respect to each other and put effort into executing the project probably. Overall, it can be said that my group supported each other and worked well to finish this assignment. 
-        </p>
-    </div>
+   <!-- Content of the Group Process category -->
+   <div id="group_processes" class="writings">
+       <br>
+       <h1>Group Processes</h1>
+       <p>Week 8:</p>
+       <p>We met each other and discussed the assignment’s structure as well as studied each other’s strengths and weaknesses. We have also achieved the first stage of getting to know our team members, including the way people talk, how they work and the way to contact each other efficiently.
+       </p>
+       <p>Then we are to do research about the upcoming topic so that in the next meeting, we can decide which idea we can use in the future.
+       </p>
+       <hr>
+       <p>Week 9:</p>
+       <p>We have gathered our original ideas as well as taken some great ideas on the internet as a way to compare to our current existing pool of ideas. Then we narrow down each idea until we get the final one
+       </p>
+       <p>Since our first meeting and our preparation at home were successful,we managed to pin down the main concept of our project to be in servings of clothes suggestions in only this meeting.
+       </p>
+       <hr>
+       <p>Week 10: </p>
+       <p>We have made a plan of the work during the meeting, then we decide each person’s work, allocate the team’s main focus so as to efficiently work through the process in the minimum time and effort.
+       </p>
+       <hr>
+       <p>Week 11:</p>
+       <p>Using the Drive and github and Canva and every online tool available, we managed to create a system of writing and checking for errors simutanously in each day: morning we write, and at night we can comment on the changes we have made. This process has been done everyday since the day we have made our plans.
+       </p>
+       <hr>
+       <p>Week 12:</p>
+       <p>After countless addings and fixings and comments everyday, we have managed to get ourselves a finalised product of the report, a website, a slideshow and finished our preparations for the demonstration day.
+       </p>
+       <hr>
+       <p>Overall:</p>
+       <p>In the first meeting to get to know each other and discuss the assignment’s structure, we quickly opened up and introduced ourselves as new friends. It was a smooth and comfortable meeting since we were all communicative, active in raising ideas and willing to listen to each other’s opinions and give feedback. Although everyone had different assignments and due dates, we tried to arrange the time as well as planned an agenda and prepared for the assignment before the meeting. During every meeting, we have one person write a meeting minute to record what was discussed and take note of important information as well as the deadline for the group. After dividing tasks, we also supported each other if someone was stuck at anything. For example, when Hung was a little out of ideas for risks, we had sat down and discussed the possibility of risks when doing this app. During the time we worked together, all members have shown respect to each other and put effort into executing the project probably. Overall, it can be said that my group supported each other and worked well to finish this assignment. 
+       </p>
+   </div>
 
-    <!-- Content of the Career Plans Category -->
-    <div id="career_plans" class="writings">
-        <br>
-        <h1>Career Plans</h1>
-            <!-- Tab links -->
-        <div class="tab">
-            <button class="tablinks" onclick="open_tab(event, 'career_plan_quynh')">Dinh Ngoc Quynh</button>
-            <button class="tablinks" onclick="open_tab(event, 'career_plan_hung')">Ngo Khai Hung</button>
-            <button class="tablinks" onclick="open_tab(event, 'career_plan_thang')">Nguyen Duc Thang</button>
-            <button class="tablinks" onclick="open_tab(event, 'career_plan_overview')">Overview</button>
-        </div>
+   <!-- Content of the Career Plans Category -->
+   <div id="career_plans" class="writings">
+       <br>
+       <h1>Career Plans</h1>
+           <!-- Tab links -->
+       <div class="tab">
+           <button class="tablinks" onclick="open_tab(event, 'career_plan_quynh')">Dinh Ngoc Quynh</button>
+           <button class="tablinks" onclick="open_tab(event, 'career_plan_hung')">Ngo Khai Hung</button>
+           <button class="tablinks" onclick="open_tab(event, 'career_plan_thang')">Nguyen Duc Thang</button>
+           <button class="tablinks" onclick="open_tab(event, 'career_plan_overview')">Overview</button>
+       </div>
 
-        <!-- Tab content of career plans -->
-        <!-- Quynh's career plans -->
-        <div id="career_plan_quynh" class="tabcontent">
-            <h3>Dinh Ngoc Quynh - E-Commerce Manager</h3>
-            <p>As I mostly finish Marketing courses in my minor, I am planning to find a position in the Digital Marketing field. To increase my possibility of success in job application, besides the fundamental marketing knowledge, I think it would be better if I know more about how the digital system works. To support the E-Commerce position of an E-Business and improve consumers' shopping experience, the way I reach out and communicate to them is crucial along with the Customer Relationship Management (CRM) has to be well-managed. 
-            </p>
-        </div>
-		<!-- Hung's career plans -->
-        <div id="career_plan_hung" class="tabcontent">
-            <h3>Ngo Khai Hung - Cyber security manager</h3>
-            <p>After graduating from RMIT in my major, I am looking forward to starting to apply to small companies that professionally train cybersecurity employees to obtain more knowledge. Working a total of 6 years to obtain a position of Cyber security manager will be one of many goals. After that, raise enough profit to establish a company at the age of 35.
-            </p>
-        </div>
-		<!-- Thang's career plans -->
-        <div id="career_plan_thang" class="tabcontent">
-            <h3>Nguyen Duc Thang - Data analyst</h3>
-            <p>For my future plans, I have already set up a list of goals for myself, including the first step of graduating RMIT with flying colours. My second goal of achieving my dream is to get myself a job which allows me to gain access to data analytical skills, which could be data analyst. Finally, once I have taken a grasp of the real work flow of real life, which might take me half a year, I can build my own project of making an A.I-based model for analysing or predicting the flow of the market at high accuracy. Still, even in the worst case scenario where I could end up failing the project, I can still have my knowledge during my studies in RMIT to make games or applications and sell them according to people’s wishes.
-            </p>
-        </div>
-        <div id="career_plan_overview" class="tabcontent">
-            <h3>Overview</h3>
-            <p>
-            Although we are all from different major, have different ideal jobs, we all want to learn IT as we acknowledge that in this modern world, especially in the 4.0 revolution, IT is a must to catch up with others and to support our career in the future as well. As can be seen through our ideal jobs, we want to study IT but more about the data. However, each of us will have different needs with different extent of knowledge regarding the IT field. Quynh wants to become a E-Commerce Manager in Digital Marketing which does not require much technical IT skills but data insights, how to optimise the available data to communicate with customers. Hung leans toward the privacy of data and systems while Thang wants to dive deeper into analysing data to and be able to serve in several perspectives such as business, finance, investment and so on. Apparently, Thang and Hung will have to be expertise in the IT field in order to achieve their dream jobs while Quynh can use it as a competitive advantage for her. 
-            </p>
-        </div>
-    </div>
-   	<!--Content of the Project Description category-->
-	<div id="project_description" class="writings">
-		<br>
-        <h1>Project Description</h1>
-        <!--Adding a Dropdown for Project Description - acting as a sub-menu-->
-        <div class="dropdown">
-        <button class="dropbtn">Dropdown</button>
-            <div class="dropdown-content">
-                <a href="#pd_overview">1. Overview</a>
-                <a href="#pd_detailed_description">2. Detailed Description</a>
-            </div>
-      	</div>
-        <!--Content of the Project Description-->
-        	<!--Content of the Project Description_Overview-->
-            <br>
-        	<h2 id="pd_overview"> Overview</h2>
-                <h3>1.1. Topic</h3>
-                	<p>Physical appearance is seen as a crucial component especially in communication. It is about not only natural beauty but also how an individual looks in which dressing can be a great contributor to the appearance improvement (Lennon 1990). Our group will create a fashion app which will focus on giving outfits recommendations for users who are struggling in choosing clothes to wear. This idea project is originally from Hung and Thang’s daily need as they find it difficult to buy and match suitable outfits for each occasion and they think this is a common problem for most men. However, we acknowledge that anyone will have at least one time wondering “What should I wear now?” or “What is the suitable outfit for this occasion?”. We see this app as a “stylist assistant” for anyone and can be developed in the long-term.</p>
-                    <p>The app will mainly be about outfit suggestions with other categories such as Community, Tips and so on. To support our idea, AI (Machine Learning), 3D Scanner will be used. Specifically, 3D Scanner is to simulate users’ body and proportion to better illustrate the visuality, creating as best experience as possible while personal information and data will be collected and be processed by AI to bring up personalised and related recommendations for users.
+       <!-- Tab content of career plans -->
+       <!-- Quynh's career plans -->
+       <div id="career_plan_quynh" class="tabcontent">
+           <h3>Dinh Ngoc Quynh - E-Commerce Manager</h3>
+           <p>As I mostly finish Marketing courses in my minor, I am planning to find a position in the Digital Marketing field. To increase my possibility of success in job application, besides the fundamental marketing knowledge, I think it would be better if I know more about how the digital system works. To support the E-Commerce position of an E-Business and improve consumers' shopping experience, the way I reach out and communicate to them is crucial along with the Customer Relationship Management (CRM) has to be well-managed. 
+           </p>
+       </div>
+ <!-- Hung's career plans -->
+       <div id="career_plan_hung" class="tabcontent">
+           <h3>Ngo Khai Hung - Cyber security manager</h3>
+           <p>After graduating from RMIT in my major, I am looking forward to starting to apply to small companies that professionally train cybersecurity employees to obtain more knowledge. Working a total of 6 years to obtain a position of Cyber security manager will be one of many goals. After that, raise enough profit to establish a company at the age of 35.
+           </p>
+       </div>
+ <!-- Thang's career plans -->
+       <div id="career_plan_thang" class="tabcontent">
+           <h3>Nguyen Duc Thang - Data analyst</h3>
+           <p>For my future plans, I have already set up a list of goals for myself, including the first step of graduating RMIT with flying colours. My second goal of achieving my dream is to get myself a job which allows me to gain access to data analytical skills, which could be data analyst. Finally, once I have taken a grasp of the real work flow of real life, which might take me half a year, I can build my own project of making an A.I-based model for analysing or predicting the flow of the market at high accuracy. Still, even in the worst case scenario where I could end up failing the project, I can still have my knowledge during my studies in RMIT to make games or applications and sell them according to people’s wishes.
+           </p>
+       </div>
+       <div id="career_plan_overview" class="tabcontent">
+           <h3>Overview</h3>
+           <p>
+           Although we are all from different major, have different ideal jobs, we all want to learn IT as we acknowledge that in this modern world, especially in the 4.0 revolution, IT is a must to catch up with others and to support our career in the future as well. As can be seen through our ideal jobs, we want to study IT but more about the data. However, each of us will have different needs with different extent of knowledge regarding the IT field. Quynh wants to become a E-Commerce Manager in Digital Marketing which does not require much technical IT skills but data insights, how to optimise the available data to communicate with customers. Hung leans toward the privacy of data and systems while Thang wants to dive deeper into analysing data to and be able to serve in several perspectives such as business, finance, investment and so on. Apparently, Thang and Hung will have to be expertise in the IT field in order to achieve their dream jobs while Quynh can use it as a competitive advantage for her. 
+           </p>
+       </div>
+   </div>
+   <!--Content of the Project Description category-->
+<div id="project_description" class="writings">
+ <br>
+       <h1>Project Description</h1>
+       <!--Adding a Dropdown for Project Description - acting as a sub-menu-->
+       <div class="dropdown">
+       <button class="dropbtn">Dropdown</button>
+           <div class="dropdown-content">
+               <a href="#pd_overview">1. Overview</a>
+               <a href="#pd_detailed_description">2. Detailed Description</a>
+           </div>
+      </div>
+       <!--Content of the Project Description-->
+        <!--Content of the Project Description_Overview-->
+           <br>
+        <h2 id="pd_overview"> Overview</h2>
+               <h3>1.1. Topic</h3>
+                <p>Physical appearance is seen as a crucial component especially in communication. It is about not only natural beauty but also how an individual looks in which dressing can be a great contributor to the appearance improvement (Lennon 1990). Our group will create a fashion app which will focus on giving outfits recommendations for users who are struggling in choosing clothes to wear. This idea project is originally from Hung and Thang’s daily need as they find it difficult to buy and match suitable outfits for each occasion and they think this is a common problem for most men. However, we acknowledge that anyone will have at least one time wondering “What should I wear now?” or “What is the suitable outfit for this occasion?”. We see this app as a “stylist assistant” for anyone and can be developed in the long-term.</p>
+                   <p>The app will mainly be about outfit suggestions with other categories such as Community, Tips and so on. To support our idea, AI (Machine Learning), 3D Scanner will be used. Specifically, 3D Scanner is to simulate users’ body and proportion to better illustrate the visuality, creating as best experience as possible while personal information and data will be collected and be processed by AI to bring up personalised and related recommendations for users.
 </p>
 
-                <h3>1.2. Motivation</h3>
-                	<p>Several surveys have pointed out deciding what to wear is actually a waste of time and stressing people out. Specifically, a survey conducted by Trunk Club with 2000 Americans shows that 51% of respondents were wondering what to wear, 46% of respondents try on half of their closet, 47% ask friends for advice and about 32% are not confident with their outfits (Gervis 2019) (Figure 1). Another survey on 1,000 respondents from Perry Ellis brand pointed out men are even more struggling than women. 81% are reported for not knowing what to wear on an occasion along with 71% of participants confess feeling their outfits were inappropriate while 33% missed the event since they did not have a suitable outfit (Sergan 2017) (Figure 2). Besides, a survey also shows that averagely, a person spend 8 hours per month on choosing clothes, equal to nearly 100 hours per year which is time-consuming (Gervis 2021)
+               <h3>1.2. Motivation</h3>
+                <p>Several surveys have pointed out deciding what to wear is actually a waste of time and stressing people out. Specifically, a survey conducted by Trunk Club with 2000 Americans shows that 51% of respondents were wondering what to wear, 46% of respondents try on half of their closet, 47% ask friends for advice and about 32% are not confident with their outfits (Gervis 2019) (Figure 1). Another survey on 1,000 respondents from Perry Ellis brand pointed out men are even more struggling than women. 81% are reported for not knowing what to wear on an occasion along with 71% of participants confess feeling their outfits were inappropriate while 33% missed the event since they did not have a suitable outfit (Sergan 2017) (Figure 2). Besides, a survey also shows that averagely, a person spend 8 hours per month on choosing clothes, equal to nearly 100 hours per year which is time-consuming (Gervis 2021)
 </p>
-				<img src="/images/html5.gif" alt="HTML5 Icon" style="width:128px;height:128px;">
-                <img src="/images/html5.gif" alt="HTML5 Icon" style="width:128px;height:128px;">
-                <p>A well-looking physical appearance will boost one’s attractiveness and confidence, create opportunities and better relationships as well as society treatment (Ram 2021; Wang 2009). For example, some studies show that dressing well increases your possibility of success in getting a job, promotions and trust (Smith 2016). Clothing can also be an indirect way for self-expression, reflecting one’s personality, status and feelings (Efremov, Kertakova and Vangja 2021). However, dressing well is still being paid a little attention as not everyone thinks it is important. This app is created with a hope of making choosing clothes enjoyable, saving people’s time and guiding them to dress appropriately.     
+   <img src="Github Image/Chart 1.png" alt="Figure 1" style="width:600px;height:auto;display:block;">
+               <img src="Github Image/Chart 2.png" alt="Figure 2" style="width:600px;height:auto;display:block;">
+               <p>A well-looking physical appearance will boost one’s attractiveness and confidence, create opportunities and better relationships as well as society treatment (Ram 2021; Wang 2009). For example, some studies show that dressing well increases your possibility of success in getting a job, promotions and trust (Smith 2016). Clothing can also be an indirect way for self-expression, reflecting one’s personality, status and feelings (Efremov, Kertakova and Vangja 2021). However, dressing well is still being paid a little attention as not everyone thinks it is important. This app is created with a hope of making choosing clothes enjoyable, saving people’s time and guiding them to dress appropriately.     
 </p>
-				<p>Nowadays, people prefer personalization in terms of products, services and even information (McKinsey 2021) combined with the prosperity of the 4.0 revolution, everything is gradually becoming ‘digital’. Artificial Intelligence (AI) and Machine Learning have been used virally in many applications to collect and personalise users’ data to give the best results. Augmented Reality (AR) market is also growing and expected to reach $198 billion by 2025 due to its provision of realistic visuals of the item. The 3D scanner is less common, however, it is not new and is in an increasing trend and predicted to develop strongly in the future due to its features such as convenience, time saving, low cost and so on (Research and Market 2020). As being said, the app aims to help users to solve their problem in choosing outfits by giving personalised suggestions and practical visuality of themselves. Besides, to upgrade the shopping online to be more convenient, it allows users to try on clothes on their own body virtually, improving the shopping experience and satisfaction. Therefore, the app is catching up with the current IT trends to solve user's concerns. </p>
-                <h3>1.3. Landscape</h3>
-                <p>There are some mobile apps available in this field such as Closet, GetWardrobe, pronti and so on. Generally, these all recommend outfits for users by collecting personal data. For instance, Closet asks for age, current clothes and dressing style, adding items and creating outfits. GetWardrobe asks for body size, proportion and updates local weather to suggest relevantly (Figure 3). In Vietnam, Smart Fashion and Style Box are also about outfit suggestions, however, they are more likely to connect users with local clothing shops. With Smart Fashion, users can select models, available brands and items to demonstrate the outfit clearer (Figure 4). Style Box is more diversified with suggestions for stores, outfits, occasions and discount information (Figure 5)
-        </p>
-                <img src="/images/html5.gif" alt="HTML5 Icon" style="width:128px;height:128px;">
-                <img src="/images/html5.gif" alt="HTML5 Icon" style="width:128px;height:128px;">
-                <img src="/images/html5.gif" alt="HTML5 Icon" style="width:128px;height:128px;">
-                <p>The differences in our app are about the real simulation of the user body and the provision of educational information. To be more specific, with the support of Augmented Reality (AR), recommendation algorithm: user-user, item-item and Pseudo Random Number Generator as long as 3D scanner, the app will scan the user body and simulate it in the app for trying on the clothes process to have a realistic visuals. Our app also has a “Blogs” category, which provides fundamental knowledge about clothing and fashion such as “Colour Matching”, “Materials Distinguish”, etc. and clothing-related tips, respectively.
-        </p>
+   <p>Nowadays, people prefer personalization in terms of products, services and even information (McKinsey 2021) combined with the prosperity of the 4.0 revolution, everything is gradually becoming ‘digital’. Artificial Intelligence (AI) and Machine Learning have been used virally in many applications to collect and personalise users’ data to give the best results. Augmented Reality (AR) market is also growing and expected to reach $198 billion by 2025 due to its provision of realistic visuals of the item. The 3D scanner is less common, however, it is not new and is in an increasing trend and predicted to develop strongly in the future due to its features such as convenience, time saving, low cost and so on (Research and Market 2020). As being said, the app aims to help users to solve their problem in choosing outfits by giving personalised suggestions and practical visuality of themselves. Besides, to upgrade the shopping online to be more convenient, it allows users to try on clothes on their own body virtually, improving the shopping experience and satisfaction. Therefore, the app is catching up with the current IT trends to solve user's concerns. </p>
+               <h3>1.3. Landscape</h3>
+               <p>There are some mobile apps available in this field such as Closet, GetWardrobe, pronti and so on. Generally, these all recommend outfits for users by collecting personal data. For instance, Closet asks for age, current clothes and dressing style, adding items and creating outfits. GetWardrobe asks for body size, proportion and updates local weather to suggest relevantly (Figure 3). In Vietnam, Smart Fashion and Style Box are also about outfit suggestions, however, they are more likely to connect users with local clothing shops. With Smart Fashion, users can select models, available brands and items to demonstrate the outfit clearer (Figure 4). Style Box is more diversified with suggestions for stores, outfits, occasions and discount information (Figure 5)
+       </p>
+               <img src="Github Image/UX.png" alt="Figure 3" style="width:600px;height:auto;display:block;">
+               <img src="Github Image/App.png" alt="Figure 4" style="width:600px;height:auto;display:block;">
+               <img src="Github Image/App 2.png" alt="Figure 5" style="width:600px;height:auto;display:block;">
+               <p>The differences in our app are about the real simulation of the user body and the provision of educational information. To be more specific, with the support of Augmented Reality (AR), recommendation algorithm: user-user, item-item and Pseudo Random Number Generator as long as 3D scanner, the app will scan the user body and simulate it in the app for trying on the clothes process to have a realistic visuals. Our app also has a “Blogs” category, which provides fundamental knowledge about clothing and fashion such as “Colour Matching”, “Materials Distinguish”, etc. and clothing-related tips, respectively.
+       </p>
 
-                <!--Content of the Project Description_Detailed Description-->
-            <br>    
-            <h2 id="pd_detailed_description">2. Detailed Description</h2>
-                <h3>2.1. Aims</h3>
-                	<p>As we have stated above, it is crucial for everyone to get their own desirable outfits, so we have decided to make our application’s aim to create an environment where they can see their outfits and choose the one they want to wear in the shortest time span. Moreover, once such an act has been repeated continuously, the former user can now be transformed into someone who has taken the first step of knowing how to wear costumes in their own styles, and they can share their own knowledge to other people through our own created community.
+               <!--Content of the Project Description_Detailed Description-->
+           <br>    
+           <h2 id="pd_detailed_description">2. Detailed Description</h2>
+               <h3>2.1. Aims</h3>
+                <p>As we have stated above, it is crucial for everyone to get their own desirable outfits, so we have decided to make our application’s aim to create an environment where they can see their outfits and choose the one they want to wear in the shortest time span. Moreover, once such an act has been repeated continuously, the former user can now be transformed into someone who has taken the first step of knowing how to wear costumes in their own styles, and they can share their own knowledge to other people through our own created community.
 </p>
-					<p>With the aim of making everyone have their own desired outfits, we have decided that our users’ data must be stored to optimise their experience when using our application. Still, when taking personal information, we must also consider the need of satisfying the first-time user, and our team also does not wish to see anyone taking an hour or more just to enter their own data before seeing an app. Therefore, our first goal is to see the customers’ data can be stored effectively with the smallest amount of time spent into this act.</p>
-                    <p>Once our first step of making the app has been finished, the users’ data has been stored, we will have to consider making our application a perfect app for choosing clothes, so we will have to make sure our inputs can be used, the data can be processed and analysed in the right way, and the result will be the clothes they wished for. Still, even when the costumes are delivered to the users, they might hesitate to choose them or not be satisfied with the current suggestions, our app will have means to confirm to the users that the costumes are a fit, or other means of letting the users search for advice from us or other people.
+    <p>With the aim of making everyone have their own desired outfits, we have decided that our users’ data must be stored to optimise their experience when using our application. Still, when taking personal information, we must also consider the need of satisfying the first-time user, and our team also does not wish to see anyone taking an hour or more just to enter their own data before seeing an app. Therefore, our first goal is to see the customers’ data can be stored effectively with the smallest amount of time spent into this act.</p>
+                   <p>Once our first step of making the app has been finished, the users’ data has been stored, we will have to consider making our application a perfect app for choosing clothes, so we will have to make sure our inputs can be used, the data can be processed and analysed in the right way, and the result will be the clothes they wished for. Still, even when the costumes are delivered to the users, they might hesitate to choose them or not be satisfied with the current suggestions, our app will have means to confirm to the users that the costumes are a fit, or other means of letting the users search for advice from us or other people.
 </p>
-					<p>Once our users are satisfied with their own outfits and style, some will need a place to share their images, some will doubt their own judgement and will need further assistance from other people, and some will just wish to suggest to their friends a good-looking outfit. Our team has already processed these ideas and set ourselves another goal: a place where people can share, we will just call it a community. Then our final goal is to make this community a place worthy of looking after finding the right costumes, or even before making a proper decision of what to wear.</p>
+    <p>Once our users are satisfied with their own outfits and style, some will need a place to share their images, some will doubt their own judgement and will need further assistance from other people, and some will just wish to suggest to their friends a good-looking outfit. Our team has already processed these ideas and set ourselves another goal: a place where people can share, we will just call it a community. Then our final goal is to make this community a place worthy of looking after finding the right costumes, or even before making a proper decision of what to wear.</p>
 
-                <h3>2.2. Plans and Progesses</h3>
-                	<p>After applying a divergent thinking method in the first group meeting to generate as many ideas as we can, mostly from each member’s needs in daily life such as health, entertainment, lifestyle, daily support and so on. At first, we had about 8 ideas in which there were 2 highlighted opinions: Clothing Recommendations and Depression Assistant in which Depression is more preferable than the other because it is at the warning level currently after several accidents caused by depression, especially happening to the young generation. We planned to have some main contents in the app such as Anonymous Confession, Connect to Doctor online, Community, Private Room with a Listener, etc. However, we still decided to take 1-2 day “rest” to have a general research about each idea and see if there is any new proposal. In the second meeting, we discussed pros and cons of these two and both agreed that Depression Assistant might be out of scope for every member as it is related to psychology and mental health which requires the involvement of doctors or who have experiences in this field. Besides, it is hard to be able to control the impact of the community in our app as depression is still a sensitive topic. 
-        </p>
-                    <p>As a result, we see clothing recommendation is a suitable project for our team to launch due to 2 reasons: 1) There are not many competitors doing this model in Vietnam which can be an competitive advantage for us; 2) Clothing and dressing well is a necessary for everyone even in daily life and nowadays, the requirements for dressing are higher, especially in specific occasions such as events, job interviews, etc.. The target audience of this project will be everyone from 15 to 30 years old in both genders but will mostly from high school, universities, companies. The app will have 4 main categories:
-        </p>      
-                    <h4>* Home: </h4>
-                    <p>This page will include the forecast weather today, calendar to set plans for outfits daily, weekly or even monthly, occasional collection suggestions with suitable outfits for each. 
-        </p>
-                    <h4>* My Closet:</h4>
-                    <p>Users can look for outfit suggestions through AI technology and Recommend algorithm which will be performed under a digital closet form that contains the user's current clothes combined with the “Add new clothes” and “Try on” 3D model functions. Additionally, “Reroll" and “New Scan” functions are also available for changes in which “Reroll" is used to select another option if users do not like the first option. Users can both automatically dress up following the suggested outfit or manually select every item to mix and match by themselves.  
-        </p>
-                    <h4>* Shop:</h4>
-                    <p>The place to find current clothing stores in local areas and nearby user’s locations. They can directly shop and order through the app. In each outfit, there will be a selection for trying on their 3D model to optimise the decision without spending too much time going to the store. 
-        </p>
-                    <h4>* Blogs </h4>
-                    <p>We think giving information and knowledge to our users is a good way to create value and keep retention. We want not only to suggest the outfit alone but also help users to learn and be able to mix and match to find their styles. Specifically, in this category, clothing-related information will be provided to users through different contents. For example, colour matching, colours of clothes for each skin type, how to dress up various styles with an item, latest trends and so on. 
-        </p>
-                    <h4>* Community</h4>
-                    <p>In order to increase the engagement, we will create a place where people can post to share their picture of a well-looking outfit from our app or themselves. Additionally, they can look around to see what others’ are wearing to enrich their creativity regarding dressing. The app also supports the functions “Like”, “Comment”, “Favourite”, “Add friend” to encourage users sharing positivity and building connections. 
-        </p>
-                  	<p>We intended to have a “Learning” category to provide educational knowledge, however, after doing primary research, we found it is too much workload at this time since we will have to collect or collaborate with the third party to provide precise and useful information for users. Recommendations including shoes and accessories were also mentioned in our discussion process. We also want to develop the “Add Shop" function in the Shop Category which will allow users to add their favourite clothing stores by entering the brand name, address, link to the website/facebook/instagram, types of clothes, styles, owner permission and so on to encourage them to engage more with the app and create an opportunity to share with people. However, we want to pay more attention to develop the main goal of the app, hence, we decided to pending these features for further upgrade in the future. 
-        </p>
-        <p>Currently, we do not have any strategy or plan to sell this app since our first intention was to solve our 2 members' concern but we did think of the premium version which requires users to pay and subscription every month for advanced usages such as connect with professional stylist to take advice, pay for more features, etc.. 
-        </p>
-        <p>In the app performance perspective, we prefer a simple and user-friendly interface in order to reduce the time users have to spend to achieve the outcome since one of the aims of this project is to help users wasting too much time on choosing outfits. Besides, optimising the UX/UI design will increase user satisfaction and loyalty (New Digital Noise 2020). 
-        </p>
-        <img src="/images/html5.gif" alt="HTML5 Icon" style="width:128px;height:128px;">
-        
-        <p>We have also checked out competitors’ apps and taken note of some errors which might be helpful for us in the future. First, the loading time in some pages is too slow, about 3-7 seconds (Figure 7), which is a warning as the longer the loading time, the low satisfaction the users are. There is also negative feedback complaining about the high crash rate of the app which makes them frustrated and refuse to continue using it (Figure 8). 
+               <h3>2.2. Plans and Progesses</h3>
+                <p>After applying a divergent thinking method in the first group meeting to generate as many ideas as we can, mostly from each member’s needs in daily life such as health, entertainment, lifestyle, daily support and so on. At first, we had about 8 ideas in which there were 2 highlighted opinions: Clothing Recommendations and Depression Assistant in which Depression is more preferable than the other because it is at the warning level currently after several accidents caused by depression, especially happening to the young generation. We planned to have some main contents in the app such as Anonymous Confession, Connect to Doctor online, Community, Private Room with a Listener, etc. However, we still decided to take 1-2 day “rest” to have a general research about each idea and see if there is any new proposal. In the second meeting, we discussed pros and cons of these two and both agreed that Depression Assistant might be out of scope for every member as it is related to psychology and mental health which requires the involvement of doctors or who have experiences in this field. Besides, it is hard to be able to control the impact of the community in our app as depression is still a sensitive topic. 
+       </p>
+                   <p>As a result, we see clothing recommendation is a suitable project for our team to launch due to 2 reasons: 1) There are not many competitors doing this model in Vietnam which can be an competitive advantage for us; 2) Clothing and dressing well is a necessary for everyone even in daily life and nowadays, the requirements for dressing are higher, especially in specific occasions such as events, job interviews, etc.. The target audience of this project will be everyone from 15 to 30 years old in both genders but will mostly from high school, universities, companies. The app will have 4 main categories:
+       </p>      
+                   <h4>* Home: </h4>
+                   <p>This page will include the forecast weather today, calendar to set plans for outfits daily, weekly or even monthly, occasional collection suggestions with suitable outfits for each. 
+       </p>
+                   <h4>* My Closet:</h4>
+                   <p>Users can look for outfit suggestions through AI technology and Recommend algorithm which will be performed under a digital closet form that contains the user's current clothes combined with the “Add new clothes” and “Try on” 3D model functions. Additionally, “Reroll" and “New Scan” functions are also available for changes in which “Reroll" is used to select another option if users do not like the first option. Users can both automatically dress up following the suggested outfit or manually select every item to mix and match by themselves.  
+       </p>
+                   <h4>* Shop:</h4>
+                   <p>The place to find current clothing stores in local areas and nearby user’s locations. They can directly shop and order through the app. In each outfit, there will be a selection for trying on their 3D model to optimise the decision without spending too much time going to the store. 
+       </p>
+                   <h4>* Blogs </h4>
+                   <p>We think giving information and knowledge to our users is a good way to create value and keep retention. We want not only to suggest the outfit alone but also help users to learn and be able to mix and match to find their styles. Specifically, in this category, clothing-related information will be provided to users through different contents. For example, colour matching, colours of clothes for each skin type, how to dress up various styles with an item, latest trends and so on. 
+       </p>
+                   <h4>* Community</h4>
+                   <p>In order to increase the engagement, we will create a place where people can post to share their picture of a well-looking outfit from our app or themselves. Additionally, they can look around to see what others’ are wearing to enrich their creativity regarding dressing. The app also supports the functions “Like”, “Comment”, “Favourite”, “Add friend” to encourage users sharing positivity and building connections. 
+       </p>
+                  <p>We intended to have a “Learning” category to provide educational knowledge, however, after doing primary research, we found it is too much workload at this time since we will have to collect or collaborate with the third party to provide precise and useful information for users. Recommendations including shoes and accessories were also mentioned in our discussion process. We also want to develop the “Add Shop" function in the Shop Category which will allow users to add their favourite clothing stores by entering the brand name, address, link to the website/facebook/instagram, types of clothes, styles, owner permission and so on to encourage them to engage more with the app and create an opportunity to share with people. However, we want to pay more attention to develop the main goal of the app, hence, we decided to pending these features for further upgrade in the future. 
+       </p>
+       <p>Currently, we do not have any strategy or plan to sell this app since our first intention was to solve our 2 members' concern but we did think of the premium version which requires users to pay and subscription every month for advanced usages such as connect with professional stylist to take advice, pay for more features, etc.. 
+       </p>
+       <p>In the app performance perspective, we prefer a simple and user-friendly interface in order to reduce the time users have to spend to achieve the outcome since one of the aims of this project is to help users wasting too much time on choosing outfits. Besides, optimising the UX/UI design will increase user satisfaction and loyalty (New Digital Noise 2020). 
+       </p>
+       <img src="Github Image/Brain.png" alt="Figure 6" style="width:600px;height:auto;display:block;">
+       
+       <p>We have also checked out competitors’ apps and taken note of some errors which might be helpful for us in the future. First, the loading time in some pages is too slow, about 3-7 seconds (Figure 7), which is a warning as the longer the loading time, the low satisfaction the users are. There is also negative feedback complaining about the high crash rate of the app which makes them frustrated and refuse to continue using it (Figure 8).
 
-        </p><img src="/images/html5.gif" alt="HTML5 Icon" style="width:128px;height:128px;">
-        <img src="/images/html5.gif" alt="HTML5 Icon" style="width:128px;height:128px;">
-        <img src="/images/html5.gif" alt="HTML5 Icon" style="width:128px;height:128px;">
-        <p>To be able to launch our app, we will have to do step by step in order to have an overview about our project. We adopt the process from Emizentech (2022) as a direction (Figure 8). Currently, we have finished the stage 4 - Design wireframe for our app and are planning to finish the UX/UI. Next, a mock-up app will be tested in order to check whether it works well as we expected.
-        </p>
-                <h3>2.3. Roles</h3>
-                	<p>There is no specific role during our process of working on this assignment. Since we are new and barely have knowledge from IT, we decided everyone will have to do the research to have a broader understanding of the IT field. We also agree to support each other during the process as it has not come to the execution of our idea. However, we have 3 stages in which each stage each member will have a different role. In the first phase, Quynh was seen as a team leader as she gathered other team members and led the meeting to go smoothly while Thang and Hung also joined to discuss and contribute ideas. When it comes to the writing report, each person's role was equal as they were allocated specific parts and had to research to finish the project paper. After having the general group project, we have started doing the slides for the upcoming presentation and creating a github repository as well as our website in which Quynh is in charge of the slide and finalising the report while Hung and Thang will mainly take over the github and website. 
-                    </p>
+       </p><img src="Github Image/App 3.png" alt="Figure 7"  style="width:600px;height:auto;display:block;">
+       <img src="Github Image/Comments.png" alt="Figure 8 " style="width:600px;height:auto;display:block;">
 
-                <h3>2.4. Scope and Limits</h3>
-                	<p>Still, when making a plan, being too ambitious and the plan can never be finished, and too low will only hinder our team’s potential. Therefore, after a considerable amount of time invested in arguing which will be our limit, we have devised that we will have our focus on the young, who are still mainly asking their parents for a viable option of costumes. That’s our focus, but we will also only wish to show our customers 2 choices, the first is based on their available clothes, and the second choice is also based on their current clothes but change one part of their costumes by something they haven’t owned yet. Still, considering our own limited time and talents, our applications currently only aim for a combination of a top and bottoms, this means If the app is asked for choices, our suggestion pools will only choose tops, which could be a shirt, and a bottom, which could be pants, for the users. 
+       <img src="Github Image/Build MA.png" alt="Figure 9 " style="width:600px;height:auto;display:block;">
+       <p>To be able to launch our app, we will have to do step by step in order to have an overview about our project. We adopt the process from Emizentech (2022) as a direction (Figure 8). Currently, we have finished the stage 4 - Design wireframe for our app and are planning to finish the UX/UI. Next, a mock-up app will be tested in order to check whether it works well as we expected.
+       </p>
+               <h3>2.3. Roles</h3>
+                <p>There is no specific role during our process of working on this assignment. Since we are new and barely have knowledge from IT, we decided everyone will have to do the research to have a broader understanding of the IT field. We also agree to support each other during the process as it has not come to the execution of our idea. However, we have 3 stages in which each stage each member will have a different role. In the first phase, Quynh was seen as a team leader as she gathered other team members and led the meeting to go smoothly while Thang and Hung also joined to discuss and contribute ideas. When it comes to the writing report, each person's role was equal as they were allocated specific parts and had to research to finish the project paper. After having the general group project, we have started doing the slides for the upcoming presentation and creating a github repository as well as our website in which Quynh is in charge of the slide and finalising the report while Hung and Thang will mainly take over the github and website. 
+                   </p>
+
+               <h3>2.4. Scope and Limits</h3>
+                <p>Still, when making a plan, being too ambitious and the plan can never be finished, and too low will only hinder our team’s potential. Therefore, after a considerable amount of time invested in arguing which will be our limit, we have devised that we will have our focus on the young, who are still mainly asking their parents for a viable option of costumes. That’s our focus, but we will also only wish to show our customers 2 choices, the first is based on their available clothes, and the second choice is also based on their current clothes but change one part of their costumes by something they haven’t owned yet. Still, considering our own limited time and talents, our applications currently only aim for a combination of a top and bottoms, this means If the app is asked for choices, our suggestion pools will only choose tops, which could be a shirt, and a bottom, which could be pants, for the users. 
 Even when those limitations are imposed on us, when we reach our own agreements, we still work to guarantee that our project still produces a great experience for every participant. The first step of our vision is to set the time needed for each user to find their own clothes, from the phase of opening the app to when they have chosen their own selected outfit within 10 minutes for the first time, and later on they will only have to spend 1 minutes to get their first suggestion. Moreover, when they have chosen their outfits, we also wish that they can still have all their features available to share or to contact or to ask for a change from other people online.
-                	</p>
+                </p>
 
-                <h3>2.5. Tools and technology</h3>
-                	<p>When we decided to work on this project, 2 things crossed my mind as an IT student, starting from exploiting 3D scanning tools that can be added to every phone application that everyone can access easily. 3D computer graphics software began to be recognizable for home computers in late 1970, continuing to rapidly develop throughout time.
-                    </p>
-                    <img src="/images/html5.gif" alt="HTML5 Icon" style="width:128px;height:128px;">
-                    <p>Secondly, AI machine learning is fundamental and takes over 60% of the project alone. But what is AI? The definition of AI is the ability of a digital computer or computer-controlled robot to perform tasks with the knowledge of a normal human. Simple saying about is a computer programmed to process reasoning, discover meaning, generalise, or even learn from the experience.
-                    </p>
-                    <p>In this project, 2 main key components that we would classify in the most detailed ways are AI (Machine Learning) and 3D body models.
-                    </p>
-                    <img src="/images/html5.gif" alt="HTML5 Icon" style="width:128px;height:128px;">
-                    <h4>2.5.1. 3D body model-related tools: </h4>
-                    	<p>Software used to help generate a 3D model of the user body: 
-                        </p>-  3DF Zephyr Free (Asia mirror) is compatible and free to suit our situation and beginner-friendly. 
-                        <p>- KX V1.03 is used to analyse and detect specific parts of the body that are hard to scan
-                        </p>
-                        <p>- Machine learning and 3D Matching to build a realistic customizable 3D body model based on user’s data.
-                        </p>
-                        <p>- a 3D laser scanner can record and obtain data points from clothes to create a virtual closet of clothes.
-                        </p>
-                        <p>- AR features will capture every inch of you body to then create your 3D model.
-                        </p>
-                           <img src="/images/html5.gif" alt="HTML5 Icon" style="width:128px;height:128px;">
-                     <h4>2.5.2. Machine Learning Algorithms that we use in our project: </h4>
-                        <p>- Pseudo Random Number Generator (PRNG)
-                        </p>
-                        <p>- Gradient Boosting (GB)
-                        </p>
-                        <p>- Naïve Bayes (NB) 
-                        </p>
-                        <p>- Random Forest (RF)
-                        </p>
-                        <p>- K-nearest neighbour (KNN)
-                        </p>
-                        <p>- Recommendation Algorithm: user-user, item-item
-                        </p>
-                        
-                       <h4>2.5.3. Mobile app tools: </h4>
-                       	<p>Design tools and languages:
-                        </p>
-                        	<h5>Progamming languages</h5>
-                            	<p>- Python
-                                </p>
-                                <p>- JavaScript
-                                </p>
-                                <p>- SQL
-                                </p>
-                            <h5>Mobile tool development: </h5>
-                            	<p>Appsheet is a no-code,intent- driven app development platform. (Bailey 2020)
-                                </p>
-                                <p>Invision, Invision Studio are our choice to create UX design on mobile based on (UX-design, n.d.) 
-                                </p>
-                                <p>GPS feature is included in AR try-on system so that you can be everywhere and still have an outfit in hand. 
-                                </p>
-                                <p>Cloud Data Storage is essential to fill all user’s information so that our AI can base it to randomise and show the user most desirable choice of clothes.
-                                </p>
-                                <p>Bar scanner is built in to our app so to scan clothes barcode 
-                                </p>
-                      	<h4>2.5.4. Virtual generate related-tools: </h4>
-                        	<p>Camera
-                            </p>
-                            <p>Computer for design purpose
-                            </p>
-                            <p>A 3D laser scanner can record and obtain data points from clothes to create a virtual closet of clothes.
-                            </p>
-                            <img src="/images/html5.gif" alt="HTML5 Icon" style="width:128px;height:128px;">
-                        <h4>2.5.5. Tools and technologies that work in our application:</h4>
-                            <p>After inputting all users’ information such as: body measurement, style of choice, ethnicity, whereabouts, age from 15-30, collection of owned clothes.
-                            </p>
-                            <p>App will ask whether users want to use body scan or not ( scan for better visualisation), Users can select in our virtual closet to start their collection. Each item's colours (T-shirt, jean, dress, shorts, sportswear, etc..; red, blue, green, black, grey,....) will be placed with a number. Example:  A red t-shirt : 41; White short : 94. Randomizer algorithm will randomise your clothes choices that suit your reference. 
-                            </p>
-                            <p>AI will recommend what goes well with what based on the user's style, weather, region. 
-                            </p>
-                            <p>Randomise users’ options of clothing that they already possess or not with AI help to sort out whether your outfit is suitable with current fashion trends.
-                            </p>
-                            <p>AR features show the user's desired outfit  on user’s 3D body model on many different backgrounds (user house, random cafe, mall,...).
-                            </p>
-                            <p>If User don’t like the recommendation, click re-roll.
-                            </p>
-                            <p>Receiving feedback from users to remember their own style of clothing.
-                            </p>
-                            <p>Renew options every login.
-                            </p>
-                            <p>Programmed to adapt to weekly fashion
-                            </p>
-                       	<h3>2.6. Testing</h3>
-                        <table style="width:100%">
+               <h3>2.5. Tools and technology</h3>
+                <p>When we decided to work on this project, 2 things crossed my mind as an IT student, starting from exploiting 3D scanning tools that can be added to every phone application that everyone can access easily. 3D computer graphics software began to be recognizable for home computers in late 1970, continuing to rapidly develop throughout time.
+                   </p>
+                   <img src="Github Image/History.png" alt="Figure 10" style="width:600px;height:auto;display:block;">
+                   <p>Secondly, AI machine learning is fundamental and takes over 60% of the project alone. But what is AI? The definition of AI is the ability of a digital computer or computer-controlled robot to perform tasks with the knowledge of a normal human. Simple saying about is a computer programmed to process reasoning, discover meaning, generalise, or even learn from the experience.
+                   </p>
+                   <p>In this project, 2 main key components that we would classify in the most detailed ways are AI (Machine Learning) and 3D body models.
+                   </p>
+                   <img src="Github Image/AI pic.png" alt="Figure 11" style="width:600px;height:auto;display:block;">
+                   <h4>2.5.1. 3D body model-related tools: </h4>
+                    <p>Software used to help generate a 3D model of the user body: 
+                       </p>-  3DF Zephyr Free (Asia mirror) is compatible and free to suit our situation and beginner-friendly. 
+                       <p>- KX V1.03 is used to analyse and detect specific parts of the body that are hard to scan
+                       </p>
+                       <p>- Machine learning and 3D Matching to build a realistic customizable 3D body model based on user’s data.
+                       </p>
+                       <p>- a 3D laser scanner can record and obtain data points from clothes to create a virtual closet of clothes.
+                       </p>
+                       <p>- AR features will capture every inch of you body to then create your 3D model.
+                       </p>
+                          <img src="Github Image/AR scan.png" alt="Figure 12" style="width:600px;height:auto;display:block;">
+                    <h4>2.5.2. Machine Learning Algorithms that we use in our project: </h4>
+                       <p>- Pseudo Random Number Generator (PRNG)
+                       </p>
+                       <p>- Gradient Boosting (GB)
+                       </p>
+                       <p>- Naïve Bayes (NB) 
+                       </p>
+                       <p>- Random Forest (RF)
+                       </p>
+                       <p>- K-nearest neighbour (KNN)
+                       </p>
+                       <p>- Recommendation Algorithm: user-user, item-item
+                       </p>
+                       
+                      <h4>2.5.3. Mobile app tools: </h4>
+                       <p>Design tools and languages:
+                       </p>
+                        <h5>Progamming languages</h5>
+                            <p>- Python
+                               </p>
+                               <p>- JavaScript
+                               </p>
+                               <p>- SQL
+                               </p>
+                           <h5>Mobile tool development: </h5>
+                            <p>Appsheet is a no-code,intent- driven app development platform. (Bailey 2020)
+                               </p>
+                               <p>Invision, Invision Studio are our choice to create UX design on mobile based on (UX-design, n.d.) 
+                               </p>
+                               <p>GPS feature is included in AR try-on system so that you can be everywhere and still have an outfit in hand. 
+                               </p>
+                               <p>Cloud Data Storage is essential to fill all user’s information so that our AI can base it to randomise and show the user most desirable choice of clothes.
+                               </p>
+                               <p>Bar scanner is built in to our app so to scan clothes barcode 
+                               </p>
+                      <h4>2.5.4. Virtual generate related-tools: </h4>
+                        <p>Camera
+                           </p>
+                           <p>Computer for design purpose
+                           </p>
+                           <p>A 3D laser scanner can record and obtain data points from clothes to create a virtual closet of clothes.
+                           </p>
+                           <img src="Github Image/AR scan 2.png" alt="Figure 13" style="width:600px;height:auto;display:block;">
+                       <h4>2.5.5. Tools and technologies that work in our application:</h4>
+                           <p>After inputting all users’ information such as: body measurement, style of choice, ethnicity, whereabouts, age from 15-30, collection of owned clothes.
+                           </p>
+                           <p>App will ask whether users want to use body scan or not ( scan for better visualisation), Users can select in our virtual closet to start their collection. Each item's colours (T-shirt, jean, dress, shorts, sportswear, etc..; red, blue, green, black, grey,....) will be placed with a number. Example:  A red t-shirt : 41; White short : 94. Randomizer algorithm will randomise your clothes choices that suit your reference. 
+                           </p>
+                           <p>AI will recommend what goes well with what based on the user's style, weather, region. 
+                           </p>
+                           <p>Randomise users’ options of clothing that they already possess or not with AI help to sort out whether your outfit is suitable with current fashion trends.
+                           </p>
+                           <p>AR features show the user's desired outfit  on user’s 3D body model on many different backgrounds (user house, random cafe, mall,...).
+                           </p>
+                           <p>If User don’t like the recommendation, click re-roll.
+                           </p>
+                           <p>Receiving feedback from users to remember their own style of clothing.
+                           </p>
+                           <p>Renew options every login.
+                           </p>
+                           <p>Programmed to adapt to weekly fashion
+                           </p>
+                       <h3>2.6. Testing</h3>
+                       <table style="width:100%">
+                         <tr>
+                           <th>Criterias</th>
+                           <th>Description</th>
+                         </tr>
+                         <tr>
+                           <td>Retention rate for Cohort (%)</td>
+                           <td># Users retained at the end of time period / # Installs at start of time period</td>
+                         </tr>
                           <tr>
-                            <th>Criterias</th>
-                            <th>Description</th>
-                          </tr>
+                           <td>Churn rate (%)</td>
+                           <td>(# Users at the beginning of period - # Users at the end of period)/ # Users at the beginning of period</td>
+                         </tr>
                           <tr>
-                            <td>Retention rate for Cohort (%)</td>
-                            <td># Users retained at the end of time period / # Installs at start of time period</td>
-                          </tr>
-                           <tr>
-                            <td>Churn rate (%)</td>
-                            <td>(# Users at the beginning of period - # Users at the end of period)/ # Users at the beginning of period</td>
-                          </tr>
-                           <tr>
-                            <td>Average screens per visit (screen)</td>
-                            <td>Number of visited screens every time a user uses the app for 1 login session.</td>
-                          </tr>
-                           <tr>
-                            <td>Session length (minute)</td>
-                            <td>Time user becomes inactive - time app was launched opened</td>
-                          </tr>
-                           <tr>
-                            <td>The number of logins (times/day/person)</td>
-                            <td>Number of login for each person each day</td>
-                          </tr>
-                           <tr>
-                            <td>Load speed (second/person)</td>
-                            <td>Average time needed for 1 suggestion for each person</td>
-                          </tr>
-                           <tr>
-                            <td>Crash rate (%)</td>
-                            <td>Number of crashes / Number of tries to get suggestion</td>
-                          </tr>
-                        </table>
-                        <p style="text-align:center">A summary table of testing criterias </p>
-                        <p>To test whether our app adapts users’ requirements, what is missing, what is not working well like we expect, we plan to test on 5000 participants, who are from 15 - 30 years old and have above middle-condition - be able to buy at least 1 new set of clothes, in 1 month. We will find test users through high schools, universities and companies who have high needs regarding dressing. Here are some criterias we will use to measure the app’s effectiveness:
-                        </p>
-                        <p>Firstly, the engagement rate including retention rate, churn rate, duration, session per day, average screens per visit, and session length will be recorded as it partly reflects whether users like the app or not. Retention rate indicates the number of active users over a period of time and Churn rate is the percentage of users who stop using the app after the first use, with the average rate are 29% and 71% after 30-day use, respectively. Since we expect this app will be a daily assistant for users, we aim to have around 25%-30% of retention rate and 70%-75% of churn rate. 
-                        </p>
-                        <img src="/images/html5.gif" alt="HTML5 Icon" style="width:128px;height:128px;">
-                        <p>Since we are creating an app to serve the daily need for people, the session per day, or so-called the number of logins per day in this context, is aimed about 1-3 times. We also look at average screens per visit whether it is high or low because the high number of visited screens imply that our content is attractive and interesting to users. According to the industry benchmarks, average screens per visit is 6 and on mobile apps is 3, hence, we expect to gain at least 4-5 pages with the session length is 3-5 minutes per day. 
-                        </p>
-                        <img src="/images/html5.gif" alt="HTML5 Icon" style="width:128px;height:128px;">
-                        <img src="/images/html5.gif" alt="HTML5 Icon" style="width:128px;height:128px;">
-                        <p>Secondly, from the UX perspective, the load speed and crash rate are the two main factors we will focus on. For the load speed, the maximum time should be up to 2 seconds as 40% of users tend to uninstall or quit using the app after 3 seconds of waiting (O’Byrne 2013). We aim to optimise the loading time from 0.3-0.8 second to create a good user experience. Crash while using the app is annoying for users that can leave a negative impression and low ratings. The number of crash occurrences will be recorded by every user, session and screen view to have an overall view about the problem. The ideal crash rate should be smaller than 1% for crash per user and 0.01% for crash per session and screen views (Qualitrix 2021).  
-                        </p>
-                        <p>Lastly, feedback and ratings from testers are the must for our app improvement. We are looking for detailed feedback during and after the testing process with the overall rating above 4 is the positive result for our idea. Besides, we also want to collect the number of times users refuse to choose our first outfit recommendation to check whether the system is working well and relevant with them in order to minimise the time people spend on choosing clothes as it is the initial goal of our team. 
-                        </p>
+                           <td>Average screens per visit (screen)</td>
+                           <td>Number of visited screens every time a user uses the app for 1 login session.</td>
+                         </tr>
+                          <tr>
+                           <td>Session length (minute)</td>
+                           <td>Time user becomes inactive - time app was launched opened</td>
+                         </tr>
+                          <tr>
+                           <td>The number of logins (times/day/person)</td>
+                           <td>Number of login for each person each day</td>
+                         </tr>
+                          <tr>
+                           <td>Load speed (second/person)</td>
+                           <td>Average time needed for 1 suggestion for each person</td>
+                         </tr>
+                          <tr>
+                           <td>Crash rate (%)</td>
+                           <td>Number of crashes / Number of tries to get suggestion</td>
+                         </tr>
+                       </table>
+                       <p style="text-align:center">A summary table of testing criterias </p>
+                       <p>To test whether our app adapts users’ requirements, what is missing, what is not working well like we expect, we plan to test on 5000 participants, who are from 15 - 30 years old and have above middle-condition - be able to buy at least 1 new set of clothes, in 1 month. We will find test users through high schools, universities and companies who have high needs regarding dressing. Here are some criterias we will use to measure the app’s effectiveness:
+                       </p>
+                       <p>Firstly, the engagement rate including retention rate, churn rate, duration, session per day, average screens per visit, and session length will be recorded as it partly reflects whether users like the app or not. Retention rate indicates the number of active users over a period of time and Churn rate is the percentage of users who stop using the app after the first use, with the average rate are 29% and 71% after 30-day use, respectively. Since we expect this app will be a daily assistant for users, we aim to have around 25%-30% of retention rate and 70%-75% of churn rate. 
+                       </p>
+                       <img src="Github Image/Chart 3.png" alt=Figure 15"" style="width:600px;height:auto;display:block;">
+                       <p>Since we are creating an app to serve the daily need for people, the session per day, or so-called the number of logins per day in this context, is aimed about 1-3 times. We also look at average screens per visit whether it is high or low because the high number of visited screens imply that our content is attractive and interesting to users. According to the industry benchmarks, average screens per visit is 6 and on mobile apps is 3, hence, we expect to gain at least 4-5 pages with the session length is 3-5 minutes per day. 
+                       </p>
+                       <img src="/images/html5.gif" alt="HTML5 Icon" style="width:128px;height:128px;">
+                       <img src="Github Image/Diagram.png" alt="Figure 16 " style="width:600px;height:auto;display:block;">
+                       <p>Secondly, from the UX perspective, the load speed and crash rate are the two main factors we will focus on. For the load speed, the maximum time should be up to 2 seconds as 40% of users tend to uninstall or quit using the app after 3 seconds of waiting (O’Byrne 2013). We aim to optimise the loading time from 0.3-0.8 second to create a good user experience. Crash while using the app is annoying for users that can leave a negative impression and low ratings. The number of crash occurrences will be recorded by every user, session and screen view to have an overall view about the problem. The ideal crash rate should be smaller than 1% for crash per user and 0.01% for crash per session and screen views (Qualitrix 2021).  
+                       </p>
+                       <p>Lastly, feedback and ratings from testers are the must for our app improvement. We are looking for detailed feedback during and after the testing process with the overall rating above 4 is the positive result for our idea. Besides, we also want to collect the number of times users refuse to choose our first outfit recommendation to check whether the system is working well and relevant with them in order to minimise the time people spend on choosing clothes as it is the initial goal of our team. 
+                       </p>
 
-                <h3>2.7. Risks</h3>
-                <p>Our intention of this project is to bring out an all-smartphone friendly application that works on every model of phone in general. First advantage of using a front-face camera to be more of a One-handed use application but often has a low megapixel camera that led to unprecise measurement of the user's body. The importance of 3D body scanning technology is in the ability of the systems to not only capture the 3D image of a human body, but to also extract measurements at precise locations on the human body. Consistency of measuring techniques between the scanners is a significant issue. Among the growing number of scanners that are currently available, significant variance exists in how each scanner captures or extracts specific body measurements (Simmons and Istook, 2003). From testing feedback, we have encountered many bad reviews of how many times they need to take the scanning progress over and over to finalise the first step of using our app.
-                </p>
-                <p>Apart from that, because of the differences in style and fashion that based on the chart that we researched on the internet can be a unique way to showcase how our AI can progress, but it can also be risk that It bring upon, how unique can a style of clothing be if 2 individuals have the most likely to have same data stored in the app. Many different types of clothing can be replicated then there will be no unique aspect to the choices of clothing. It can be shown on this chart below of how things are different when there are 2 aspects both needed to be acknowledge by our AI in our project.
-                </p>
-                <img src="/images/html5.gif" alt="HTML5 Icon" style="width:128px;height:128px;">
-                <p>OverFlow with data is an inevitable part because we use lots of different built-in technologies, and also users’ data when the app is launched. That can lead to massive crashes while users are using the app. In order to fix this problem, we need to limit our application features, update our data storage for a larger purpose. In the future we will provide 2 versions of our application that can bring out the same result but are more compatible with all versions of phones.
-                </p>
-                <p>Not only that we manage to bring up the idea of this project there are many setbacks. Some apps can be purchased but some need licensed access for personal property. In further progress we can obtain a licence from a company that takes their interest in the application.
-                </p>
-                
+               <h3>2.7. Risks</h3>
+               <p>Our intention of this project is to bring out an all-smartphone friendly application that works on every model of phone in general. First advantage of using a front-face camera to be more of a One-handed use application but often has a low megapixel camera that led to unprecise measurement of the user's body. The importance of 3D body scanning technology is in the ability of the systems to not only capture the 3D image of a human body, but to also extract measurements at precise locations on the human body. Consistency of measuring techniques between the scanners is a significant issue. Among the growing number of scanners that are currently available, significant variance exists in how each scanner captures or extracts specific body measurements (Simmons and Istook, 2003). From testing feedback, we have encountered many bad reviews of how many times they need to take the scanning progress over and over to finalise the first step of using our app.
+               </p>
+               <p>Apart from that, because of the differences in style and fashion that based on the chart that we researched on the internet can be a unique way to showcase how our AI can progress, but it can also be risk that It bring upon, how unique can a style of clothing be if 2 individuals have the most likely to have same data stored in the app. Many different types of clothing can be replicated then there will be no unique aspect to the choices of clothing. It can be shown on this chart below of how things are different when there are 2 aspects both needed to be acknowledge by our AI in our project.
+               </p>
+               <img src="Github Image/Differencies.png" alt="Figure 18" style="width:600px;height:auto;display:block;">
+               <p>OverFlow with data is an inevitable part because we use lots of different built-in technologies, and also users’ data when the app is launched. That can lead to massive crashes while users are using the app. In order to fix this problem, we need to limit our application features, update our data storage for a larger purpose. In the future we will provide 2 versions of our application that can bring out the same result but are more compatible with all versions of phones.
+               </p>
+               <p>Not only that we manage to bring up the idea of this project there are many setbacks. Some apps can be purchased but some need licensed access for personal property. In further progress we can obtain a licence from a company that takes their interest in the application.
+               </p>
+               
 
-    </div>
+   </div>
 
+
+   
+<div id="project_prototype" class="writings">
+ <br>
+       <h1>Project Outcomes/ Product Prototype</h1>
+       <!--Adding a Dropdown for Project Prototype - acting as a sub-menu-->
+       <div class="dropdown">
+   <button class="dropbtn">Dropdown</button>
+           <div class="dropdown-content">
+               <a href="#pp_register">1. Register/ Login</a>
+               <a href="#pp_scan_body">2. Scan body</a>
+               <a href="#pp_scan_clothes">3. Scan Clothes</a>
+               <a href="#pp_perferences">4. Input Preferences</a>
+               <a href="#pp_save">5. Save the data</a>
+               <a href="#pp_suggest">6. Give Suggestions</a>
+               <a href="#pp_community">7. Community </a>
+               <a href="#pp_blog">8. Blog </a>
+               <a href="#pp_shop">9. Shopping </a>
+               <a href="#pp_support">10. Customer Support </a>
+           </div>
+ </div>
+
+       <!--Content of the Project Prototype category-->
+        <br>
+     <h2 id="pp_register">1. Register/ Login</h2>
+ <p>The first step of using the app, the users should register and login account for the data to be saved for later use, If not then they will have to scan and input their data everytime they use the app.
+       </p>
+ <p>Still, when asked to login, all the users need is an account containing a name and a password, an email address will be required for first time sign up. This function mainly acts as a step to provide the application the key- “user name” to modify the suggestions based on each corresponding user, while also providing us with basic user information so that we can have a track of people’s uses based on each person.
+       </p>
+ <p>We will try to shorten the time needed for the first time-user as much as possible to fit the idea of the app being a tool of saving time for the users.. And the people from the second time onwards can get the clothes suggestions just from a single press of a button right after logging in.
+       </p>
  
-    
-	<div id="project_prototype" class="writings">
-		<br>
-        <h1>Project Outcomes/ Product Prototype</h1>
-        <!--Adding a Dropdown for Project Prototype - acting as a sub-menu-->
-        <div class="dropdown">
-  		<button class="dropbtn">Dropdown</button>
-            <div class="dropdown-content">
-                <a href="#pp_register">1. Register/ Login</a>
-                <a href="#pp_scan_body">2. Scan body</a>
-                <a href="#pp_scan_clothes">3. Scan Clothes</a>
-                <a href="#pp_perferences">4. Input Preferences</a>
-                <a href="#pp_save">5. Save the data</a>
-                <a href="#pp_suggest">6. Give Suggestions</a>
-                <a href="#pp_community">7. Community </a>
-                <a href="#pp_blog">8. Blog </a>
-                <a href="#pp_shop">9. Shopping </a>
-                <a href="#pp_support">10. Customer Support </a>
-            </div>
-		</div>
-
-        <!--Content of the Project Prototype category-->
-        	<br>
-    		<h2 id="pp_register">1. Register/ Login</h2>
-		<p>The first step of using the app, the users should register and login account for the data to be saved for later use, If not then they will have to scan and input their data everytime they use the app.
-        </p>
-		<p>Still, when asked to login, all the users need is an account containing a name and a password, an email address will be required for first time sign up. This function mainly acts as a step to provide the application the key- “user name” to modify the suggestions based on each corresponding user, while also providing us with basic user information so that we can have a track of people’s uses based on each person.
-        </p>
-		<p>We will try to shorten the time needed for the first time-user as much as possible to fit the idea of the app being a tool of saving time for the users.. And the people from the second time onwards can get the clothes suggestions just from a single press of a button right after logging in.
-        </p>
-		
-            
-            <h2 id="pp_scan_body">2. Scan/ take input about the body of the users</h2>
-		<p>The person will have the option to either scan themselves through our app or give the app the numbers of their body like height, hips, chest,... This function will be performed in the first time use of the app and later on whenever the user wants to update their body scanning/ features. That is when our 3D body front-face camera will require to take the user's body measurement for better application experience.
-        </p>
-		<p>The more accurate the data, the more appealing our suggestion will be.
+<img src="Github Image/Register .png" alt="Figure 19" style="width:600px;height:auto;display:block;">
+           <h2 id="pp_scan_body">2. Scan/ take input about the body of the users</h2>
+ <p>The person will have the option to either scan themselves through our app or give the app the numbers of their body like height, hips, chest,... This function will be performed in the first time use of the app and later on whenever the user wants to update their body scanning/ features. That is when our 3D body front-face camera will require to take the user's body measurement for better application experience.
+       </p>
+ <p>The more accurate the data, the more appealing our suggestion will be.
 This function mainly is for reducing the time needed for the users' first time signing up, since the body scanning will provide quick and accurate data, which only requires a quick scan in less than 20 seconds. Moreover, this data will influence the app’s later on suggestions’ accuracy. Still, even if scanning isn’t an option for the users, they can still type in their body numbers.
 </p>
-		<p>Still, since our time is limited, currently, we are linking our app with other applications that allow us to perform the scan to get the numbers we need. If this function is skipped by particular users, the body information will be auto generated based on the general body type of their living area.
-        </p>
-		<p>In the future, we plan to let it automatically update the users’ body numbers whenever the app receive a notification of the user’s full body scan on any media (If the permission is given)
-        </p>
-            
-            <h2 id="pp_scan_clothes">3. Scan/ take input about the clothes of the users</h2>
-		<p>Here, our barcode feature is used to scan the barcode that is tagged along with your clothes. Once we have known the numbers of the body, we will have to ask for their current clothes. We shall provide them a number of options as follow:
-        </p>
-		<p>- Scan the barcode of the clothes
-        </p>
-		<p>- Scan the clothes using our application
-        </p>
-		<p>- Send the app their clothes pictures
-        </p>
-		<p>- Type in the numbers
-        </p>
-		<p>The more accurate the input, the better our suggestions will be to the users.
+ <p>Still, since our time is limited, currently, we are linking our app with other applications that allow us to perform the scan to get the numbers we need. If this function is skipped by particular users, the body information will be auto generated based on the general body type of their living area.
+       </p>
+ <p>In the future, we plan to let it automatically update the users’ body numbers whenever the app receive a notification of the user’s full body scan on any media (If the permission is given)
+       </p>     
+           <h2 id="pp_scan_clothes">3. Scan/ take input about the clothes of the users</h2>
+ <p>Here, our barcode feature is used to scan the barcode that is tagged along with your clothes. Once we have known the numbers of the body, we will have to ask for their current clothes. We shall provide them a number of options as follow:
+       </p>
+ <p>- Scan the barcode of the clothes
+       </p>
+ <p>- Scan the clothes using our application
+       </p>
+ <p>- Send the app their clothes pictures
+       </p>
+ <p>- Type in the numbers
+       </p>
+ <p>The more accurate the input, the better our suggestions will be to the users.
 In a bizarre scenario where users don’t give inputs of their clothes, the app will decide the clothes chosen as any clothes of the users’ preferences.
 </p>
-		<p>We have created a virtual closet full of 3D scanned clothes that user can select if they don’t want to scan barcodes or their clothes have lost the barcode with the help of a camera, laser 3D scanner, 3DF Zephyr, to capture all the detail that users’ clothes have. This function will be available for the first time use of the app and whenever the users want to change their outfit wardrobe.
-        </p>
-		<p>In the future, we plan to have it automatically update whenever they receive a notification of a person buying a set of clothes to reduce the stress of having to type the clothes in every time they buy a new one.
-        </p>
-            
-            <h2 id="pp_perferences">4. Take input of the users’ preferences</h2>
-		<p>Then we will ask for the users’ likings and dislikes based on our database and categories with these major types:
-        </p>
-		<p>- Place of livings: Countries, cities, districts,...
-        </p>
-		<p>- Age: 15, 20, 30,...
-        </p>
-		<p>- Personal Preferences: Trendy, Unique, Casual,...
-        </p>
-		<p>These tags can be changed before and after the suggestions have been made.
+ <p>We have created a virtual closet full of 3D scanned clothes that user can select if they don’t want to scan barcodes or their clothes have lost the barcode with the help of a camera, laser 3D scanner, 3DF Zephyr, to capture all the detail that users’ clothes have. This function will be available for the first time use of the app and whenever the users want to change their outfit wardrobe.
+       </p>
+ <p>In the future, we plan to have it automatically update whenever they receive a notification of a person buying a set of clothes to reduce the stress of having to type the clothes in every time they buy a new one.
+       </p>
+           <img src="Github Image/Clothes Scan.png" alt="Figure 21" style="width:600px;height:auto;display:block;">
+           <h2 id="pp_perferences">4. Take input of the users’ preferences</h2>
+ <p>Then we will ask for the users’ likings and dislikes based on our database and categories with these major types:
+       </p>
+ <p>- Place of livings: Countries, cities, districts,...
+       </p>
+ <p>- Age: 15, 20, 30,...
+       </p>
+ <p>- Personal Preferences: Trendy, Unique, Casual,...
+       </p>
+ <p>These tags can be changed before and after the suggestions have been made.
 This function works as a failsafe when the above 2 features are skipped, while also providing the A.I data for accurate suggestions. AI will then sort out the user's clothes based on their reference category along with other users to then lead to the community function.
 </p>
-		<p>We will later decide the compulsory tags for the first time use after the testing phase of the project.
-        </p>
-            
-            <h2 id="pp_save">5. Save the data</h2>
-		<p>User information will be stored in our Cloud Data Storage so that our application can run smoothly based on it. Once the data has been given by the user, our app will show the result of the input data and show a prompt at the bottom: “Do you wish to save or to change the current data?”. If they press yes, then the data is saved, if not then they can change whatever they wish it to.
+ <p>We will later decide the compulsory tags for the first time use after the testing phase of the project.
+       </p>
+           <img src="Github Image/Reference.png" alt="Figure 22" style="width:600px;height:auto;display:block;">
+           <h2 id="pp_save">5. Save the data</h2>
+ <p>User information will be stored in our Cloud Data Storage so that our application can run smoothly based on it. Once the data has been given by the user, our app will show the result of the input data and show a prompt at the bottom: “Do you wish to save or to change the current data?”. If they press yes, then the data is saved, if not then they can change whatever they wish it to.
 </p>
-		<p>After this, the user's data will be stored in our system Data Cloud Storage.
+ <p>After this, the user's data will be stored in our system Data Cloud Storage.
 The saved data can be changed by the users after their first suggestion by pressing the “Change data” button.
 </p>
-		<p>This will act as a confirmation of the users’ data and reduce the need of an auto save function when using the application (reduce the data traffic and increase the optimal time when using the app)
-        </p>
-		<p>In the future, we will customise the confirmation screen to either minimise it to a notification above the app or enlarge it into an entire screen based on the users feedback. Also, we will consider the need for a save confirmation or auto-save after each screen change.
-        </p>
-    		
-            <h2 id="pp_suggest">6. Process the data and give users suggestions about the clothes</h2>
-		<p>There will be a button called: “Today Outfit” that once pressed, it will prompt the user the best clothes they can wear.
-        </p>
-		<p>Once the first suggestion has been made, if the user is dissatisfied, they can choose to change their current tags, or change their saved data, then start another round of randomised sets of clothes by the our AI algorithm. With the help of the recommendation algorithm and randomiser algorithm our application can present the user with a new set of clothes based on their chosen reference.
-        </p>
-		<p>This is the main aim of the app: “To give people the suggestion of clothes”. This will help people from the need of choosing clothes everyday.
-        </p>
-		<p>Still, currently our group has decided that there will only be 2 sets of clothes, one they already owned and another option they are missing 1 piece or both.
+ <p>This will act as a confirmation of the users’ data and reduce the need of an auto save function when using the application (reduce the data traffic and increase the optimal time when using the app)
+       </p>
+ <p>In the future, we will customise the confirmation screen to either minimise it to a notification above the app or enlarge it into an entire screen based on the users feedback. Also, we will consider the need for a save confirmation or auto-save after each screen change.
+       </p>
+     
+           <h2 id="pp_suggest">6. Process the data and give users suggestions about the clothes</h2>
+ <p>There will be a button called: “Today Outfit” that once pressed, it will prompt the user the best clothes they can wear.
+       </p>
+ <p>Once the first suggestion has been made, if the user is dissatisfied, they can choose to change their current tags, or change their saved data, then start another round of randomised sets of clothes by the our AI algorithm. With the help of the recommendation algorithm and randomiser algorithm our application can present the user with a new set of clothes based on their chosen reference.
+       </p>
+ <p>This is the main aim of the app: “To give people the suggestion of clothes”. This will help people from the need of choosing clothes everyday.
+       </p>
+ <p>Still, currently our group has decided that there will only be 2 sets of clothes, one they already owned and another option they are missing 1 piece or both.
 We also hold the dream of adding pictures or motions of the users when wearing the clothes.
 </p>
-		
-            <h2 id="pp_community">7. Community </h2>
-            <p>However, If our suggestions could not appeal to the users, we have our resort of giving them a community to ask questions. This community will be advertised and managed by one of our members in the role of moderator to ensure that the environment is secured while also being enjoyable and toxic-free for everyone on the internet. Our community function will be programmed with the recommendation algorithm, user-user, people in one category can see each other's present set of clothes and also can comment on it. Item-item recommendations algorithm will recommend you to a similar style of clothes that you have chosen while using the application.
-            </p>
-            <p>This community will work as a place where people post their own questions and others will comment on their answers under their posts.
-            </p>
-            <p>In the future, once the community is large enough, we will consider using A.I to manage the hub instead of resorting to the need of human resources.
-            </p>
-            
-            <h2 id="pp_blog">8. Blog</h2>
-            <p>When there are people wishing to share their knowledge, or when they are proud of their sets of clothes, or when they just want to give feedback based on our applications in a long post, we have a feature called: “blog”.
-            </p>
-            <p>This blog will provide people with a variety of posts categorised in tags and will be read thoroughly by the admins before making an appearance.
-            </p>
-            <p>This will also be managed by human resources when the site is still in the developing phase in order to keep the environment toxic-free and enjoyable for everyone.
-            </p>
-            <p>In the future, once the blog posts are large enough, we will consider using A.I to manage the hub instead of resorting to the need of human resources.</p>
-            
-            <h2 id="pp_shop">9. Shopping</h2>
-            <p>This will provide the users options to buy and sell clothes they haven’t owned. 
+<img src=" Github Image/Home page.png" alt="Figure 24" style="width:600px;height:auto;display:block;">
+
+<img src="Github Image/My Closet.png" alt="My Closet" style="width:600px;height:auto;display:block;">
+           <h2 id="pp_community">7. Community </h2>
+           <p>However, If our suggestions could not appeal to the users, we have our resort of giving them a community to ask questions. This community will be advertised and managed by one of our members in the role of moderator to ensure that the environment is secured while also being enjoyable and toxic-free for everyone on the internet. Our community function will be programmed with the recommendation algorithm, user-user, people in one category can see each other's present set of clothes and also can comment on it. Item-item recommendations algorithm will recommend you to a similar style of clothes that you have chosen while using the application.
+           </p>
+           <p>This community will work as a place where people post their own questions and others will comment on their answers under their posts.
+           </p>
+           <p>In the future, once the community is large enough, we will consider using A.I to manage the hub instead of resorting to the need of human resources.
+           </p>
+           <img src="Github Image/Shop.png" alt="Shop" style="width:600px;height:auto;display:block;">
+           <h2 id="pp_blog">8. Blog</h2>
+           <p>When there are people wishing to share their knowledge, or when they are proud of their sets of clothes, or when they just want to give feedback based on our applications in a long post, we have a feature called: “blog”.
+           </p>
+           <p>This blog will provide people with a variety of posts categorised in tags and will be read thoroughly by the admins before making an appearance.
+           </p>
+           <p>This will also be managed by human resources when the site is still in the developing phase in order to keep the environment toxic-free and enjoyable for everyone.
+           </p>
+           <p>In the future, once the blog posts are large enough, we will consider using A.I to manage the hub instead of resorting to the need of human resources.</p>
+           <img src="Github Image/News.png" alt="News" style="width:600px;height:auto;display:block;">
+           <h2 id="pp_shop">9. Shopping</h2>
+           <p>This will provide the users options to buy and sell clothes they haven’t owned. 
 Once the suggestions have been made, or they just wish to see which clothes can go with the ones already in their closet, the shop function will be available to use. This function will direct users to the sites where they can buy the clothes on the application. Algorithms will be used in shop feature is the same as the community feature above.
 </p>
-            <p>However, currently we are asking for collaborations from other applications.
+           <p>However, currently we are asking for collaborations from other applications.
 In the future, once the purchase on the shop is made, the data will be sent directly to the system and update the users’ wardrobe, preferences.
 </p>
-            
-            <h2 id="pp_support">10. Customer Support</h2>
-            <p>Still, when there are problems relating to our application, there will always be customer support to help them solve it.
-            </p>
-            <p>We will have frequent Q&A channels, while also maintaining the ways for people to contact us like: our websites, emails, phone calls, text messages,...
-            </p>
-            <p>In the future, we will improve the Q&A channel through customers' questions and feedback. Moreover, when the system has stabilised, we will consider either adding A.I into the framework or adding auto-generated messages to the messages.</p>
-            
-            
-      			
+           <img src="Github Image/Community.png" alt="community" style="width:600px;height:auto;display:block;">
+           <h2 id="pp_support">10. Customer Support</h2>
+           <p>Still, when there are problems relating to our application, there will always be customer support to help them solve it.
+           </p>
+           <p>We will have frequent Q&A channels, while also maintaining the ways for people to contact us like: our websites, emails, phone calls, text messages,...
+           </p>
+           <p>In the future, we will improve the Q&A channel through customers' questions and feedback. Moreover, when the system has stabilised, we will consider either adding A.I into the framework or adding auto-generated messages to the messages.</p>
+           
+           
         
-    </div>
+       
+   </div>
 </body>
 
 </html>
